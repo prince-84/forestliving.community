@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #2b3d22;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.btn-primary {
+  @apply inline-block bg-forest-700 hover:bg-forest-800 text-white text-sm tracking-wide px-6 py-3 rounded-sm transition-colors duration-200;
+}
+
+.btn-outline {
+  @apply inline-block border border-forest-700 text-forest-700 hover:bg-forest-700 hover:text-white text-sm tracking-wide px-6 py-3 rounded-sm transition-colors duration-200;
+}
+
+.eyebrow {
+  @apply inline-block text-xs tracking-[0.2em] uppercase bg-forest-100 text-forest-700 px-4 py-1.5 rounded-full font-medium;
+}
+
+/* React Phone Number Input styling */
+.phone-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #efe9dd;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow 0.15s;
+}
+
+.phone-input-wrapper:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #6b9256;
+}
+
+.phone-input-wrapper .PhoneInputCountry {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-right: 1px solid #efe9dd;
+  background: #f8f5ef;
+  gap: 6px;
+  min-width: 72px;
+}
+
+.phone-input-wrapper .PhoneInputCountrySelect {
+  appearance: none;
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  color: #334a28;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+}
+
+.phone-input-wrapper .PhoneInputCountryIcon {
+  width: 22px;
+  height: 16px;
+  border-radius: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.phone-input-wrapper .PhoneInputCountryIconImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.phone-input-wrapper .PhoneInputInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #2b3d22;
+  background: transparent;
+}
+
+.phone-input-wrapper .PhoneInputInput::placeholder {
+  color: #a0aec0;
+}

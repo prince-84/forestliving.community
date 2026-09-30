@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Background paper -->
+  <rect width="800" height="600" fill="#f5f4ef"/>
+  
+  <!-- Subtle grid lines -->
+  <g stroke="#e2e0d8" stroke-width="0.75" stroke-dasharray="4 4">
+    <line x1="0" y1="50" x2="800" y2="50"/> <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/> <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/> <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/> <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="450" x2="800" y2="450"/> <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="0" y1="550" x2="800" y2="550"/>
+    
+    <line x1="50" y1="0" x2="50" y2="600"/> <line x1="100" y1="0" x2="100" y2="600"/>
+    <line x1="150" y1="0" x2="150" y2="600"/> <line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="250" y1="0" x2="250" y2="600"/> <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="350" y1="0" x2="350" y2="600"/> <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="450" y1="0" x2="450" y2="600"/> <line x1="500" y1="0" x2="500" y2="600"/>
+    <line x1="550" y1="0" x2="550" y2="600"/> <line x1="600" y1="0" x2="600" y2="600"/>
+    <line x1="650" y1="0" x2="650" y2="600"/> <line x1="700" y1="0" x2="700" y2="600"/>
+    <line x1="750" y1="0" x2="750" y2="600"/>
+  </g>
+
+  <!-- Outer Structural Thick Walls -->
+  <g fill="#2d3748" stroke="#1a202c" stroke-width="4">
+    <!-- Main outer perimeter -->
+    <rect x="80" y="60" width="640" height="480" fill="none" stroke-width="8"/>
+    <!-- Outer wall solid fills for CAD look -->
+    <path d="M 80 60 L 720 60 L 720 540 L 80 540 Z" fill="none" stroke="#222" stroke-width="10"/>
+  </g>
+
+  <!-- Interior Walls (Thick Lines) -->
+  <g stroke="#1a202c" stroke-width="6" fill="none" stroke-linecap="square">
+    <!-- Bedroom divider wall -->
+    <line x1="80" y1="280" x2="380" y2="280"/>
+    <!-- Bathroom wall -->
+    <line x1="380" y1="60" x2="380" y2="220"/>
+    <line x1="380" y1="220" x2="540" y2="220"/>
+    <!-- Kitchen / Living divider -->
+    <line x1="540" y1="280" x2="720" y2="280"/>
+    <line x1="540" y1="220" x2="540" y2="400"/>
+    <!-- Balcony wall & glass window -->
+    <line x1="80" y1="540" x2="720" y2="540" stroke="#718096" stroke-width="3"/>
+  </g>
+
+  <!-- Windows & Balcony Sliding Doors (Thin Parallel Lines) -->
+  <g stroke="#4a5568" stroke-width="2" fill="none">
+    <!-- Top Windows -->
+    <line x1="180" y1="60" x2="300" y2="60"/>
+    <line x1="180" y1="56" x2="300" y2="56"/>
+    <line x1="580" y1="60" x2="680" y2="60"/>
+    <line x1="580" y1="56" x2="680" y2="56"/>
+
+    <!-- Balcony Glass Door -->
+    <line x1="200" y1="540" x2="480" y2="540"/>
+    <line x1="200" y1="535" x2="480" y2="535"/>
+  </g>
+
+  <!-- Door Swing Arcs (CAD Style) -->
+  <g stroke="#a0aec0" stroke-width="2" fill="none">
+    <!-- Main Entrance Door -->
+    <path d="M 660 60 A 50 50 0 0 1 710 110" stroke-dasharray="3 3"/>
+    <line x1="660" y1="60" x2="710" y2="60" stroke="#2d3748" stroke-width="3"/>
+
+    <!-- Bedroom Door -->
+    <path d="M 330 280 A 40 40 0 0 1 370 320" stroke-dasharray="3 3"/>
+    <line x1="330" y1="280" x2="370" y2="280" stroke="#2d3748" stroke-width="3"/>
+
+    <!-- Bathroom Door -->
+    <path d="M 380 170 A 40 40 0 0 1 420 210" stroke-dasharray="3 3"/>
+    <line x1="380" y1="170" x2="380" y2="210" stroke="#2d3748" stroke-width="3"/>
+  </g>
+
+  <!-- Furniture Sketches -->
+  <!-- Master Bed & Pillows -->
+  <g fill="none" stroke="#4a5568" stroke-width="2">
+    <rect x="120" y="90" width="160" height="140" rx="4"/>
+    <rect x="130" y="100" width="60" height="35" rx="3" fill="#e2e8f0"/>
+    <rect x="210" y="100" width="60" height="35" rx="3" fill="#e2e8f0"/>
+    <path d="M 120 150 C 180 160, 220 160, 280 150" fill="none"/>
+    <!-- Side tables -->
+    <rect x="90" y="100" width="25" height="30" rx="2"/>
+    <rect x="285" y="100" width="25" height="30" rx="2"/>
+  </g>
+
+  <!-- Living Room Sofa & Coffee Table -->
+  <g fill="none" stroke="#4a5568" stroke-width="2">
+    <!-- L-Shaped Sofa -->
+    <path d="M 140 340 L 320 340 L 320 480 L 260 480 L 260 390 L 140 390 Z" fill="#edf2f7"/>
+    <rect x="170" y="410" width="120" height="50" rx="4" fill="#e2e8f0"/>
+    <!-- TV Unit -->
+    <rect x="120" y="500" width="160" height="20" rx="2" fill="#cbd5e0"/>
+  </g>
+
+  <!-- Dining Table & Chairs -->
+  <g fill="none" stroke="#4a5568" stroke-width="2">
+    <rect x="420" y="320" width="90" height="110" rx="6" fill="#e2e8f0"/>
+    <circle cx="465" cy="300" r="12" fill="#cbd5e0"/>
+    <circle cx="465" cy="450" r="12" fill="#cbd5e0"/>
+    <circle cx="395" cy="375" r="12" fill="#cbd5e0"/>
+    <circle cx="535" cy="375" r="12" fill="#cbd5e0"/>
+  </g>
+
+  <!-- Kitchen Counter & Sink -->
+  <g fill="none" stroke="#4a5568" stroke-width="2">
+    <rect x="560" y="300" width="140" height="200" fill="#edf2f7"/>
+    <rect x="580" y="320" width="40" height="35" rx="2" fill="#e2e8f0"/>
+    <circle cx="650" cy="335" r="10"/>
+    <circle cx="650" cy="385" r="10"/>
+    <circle cx="650" cy="435" r="10"/>
+  </g>
+
+  <!-- Bathroom Fixtures -->
+  <g fill="none" stroke="#4a5568" stroke-width="2">
+    <!-- Bathtub / Shower -->
+    <rect x="400" y="80" width="120" height="70" rx="8" fill="#e2e8f0"/>
+    <!-- Vanity Sink -->
+    <rect x="470" y="170" width="50" height="35" rx="4" fill="#e2e8f0"/>
+    <ellipse cx="495" cy="187" rx="14" ry="10" fill="#cbd5e0"/>
+    <!-- Toilet -->
+    <ellipse cx="420" cy="185" rx="12" ry="16" fill="#e2e8f0"/>
+  </g>
+
+  <!-- Dimension Lines (CAD Style) -->
+  <g stroke="#a0aec0" stroke-width="1.5" fill="none">
+    <!-- Top Overall Dimension -->
+    <line x1="80" y1="35" x2="720" y2="35"/>
+    <line x1="80" y1="25" x2="80" y2="45"/>
+    <line x1="720" y1="25" x2="720" y2="45"/>
+    <text x="400" y="30" font-family="monospace" font-size="14" font-weight="bold" fill="#4a5568" text-anchor="middle">12.50 m</text>
+
+    <!-- Side Overall Dimension -->
+    <line x1="50" y1="60" x2="50" y2="540"/>
+    <line x1="40" y1="60" x2="60" y2="60"/>
+    <line x1="40" y1="540" x2="60" y2="540"/>
+    <text x="35" y="300" font-family="monospace" font-size="14" font-weight="bold" fill="#4a5568" text-anchor="middle" transform="rotate(-90 35 300)">9.80 m</text>
+  </g>
+
+  <!-- Architectural Room Labels & Stamp -->
+  <g font-family="sans-serif" font-weight="bold" fill="#2d3748" text-anchor="middle">
+    <text x="230" y="190" font-size="18" letter-spacing="1">MASTER BEDROOM</text>
+    <text x="230" y="210" font-size="12" fill="#718096">4.2m x 3.8m</text>
+
+    <text x="230" y="440" font-size="18" letter-spacing="1">LIVING &amp; DINING</text>
+    <text x="230" y="460" font-size="12" fill="#718096">5.6m x 4.2m</text>
+
+    <text x="630" y="410" font-size="16" letter-spacing="1">KITCHEN</text>
+    <text x="460" y="125" font-size="14" letter-spacing="1">BATH</text>
+    <text x="400" y="575" font-size="16" letter-spacing="2" fill="#4a5568">BALCONY TERRACE</text>
+  </g>
+
+  <!-- Architect Compass Rose -->
+  <g transform="translate(680, 500)">
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#2d3748" stroke-width="2"/>
+    <polygon points="0,-18 5,0 0,-4 -5,0" fill="#2d3748"/>
+    <polygon points="0,18 5,0 0,4 -5,0" fill="#a0aec0"/>
+    <text x="0" y="-24" font-family="sans-serif" font-size="12" font-weight="bold" fill="#2d3748" text-anchor="middle">N</text>
+  </g>
+</svg>
