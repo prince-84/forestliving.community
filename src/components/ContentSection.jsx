@@ -8,6 +8,10 @@ const blocks = [
     body: "Ghaf Woods Properties is a premier residential community blending nature with modern living. This development features luxury off-plan properties with sustainable design and class amenities.",
   },
   {
+    title: "Maravelle at Ghaf Woods",
+    body: "Maravelle Residences at Ghaf Woods is a new residential development by Majid Al Futtaim in Dubailand, Dubai. Surrounded by lush greenery, the community offers a peaceful forest-inspired lifestyle with modern 2, 3, and 4-bedroom apartments. Designed for comfortable living, the residences combine contemporary architecture with natural surroundings, creating a calm and private environment for residents while keeping them connected to Dubai's key destinations and attractions.",
+  },
+  {
     title: "Distrikt At Ghaf Woods",
     body: "Majid Al Futtaim has recently launched a new distrikt at Ghaf Woods, situated in the heart of Dubai's nature. The Distrikt has been selected the lifestyle of its residents, offering a distinctive and highly sustainable lifestyle.",
   },

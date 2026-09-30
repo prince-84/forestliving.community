@@ -1,0 +1,31 @@
+# Apache .htaccess configuration for forestliving.community
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Block/Redirect ALL subdomains (e.g., www, staging, dev, random subdomains) to the primary apex domain
+  # Prevents unwanted subdomains from being indexed in Google Search Console (GSC)
+  RewriteCond %{HTTP_HOST} !^forestliving\.community$ [NC]
+  RewriteRule ^(.*)$ https://forestliving.community/$1 [R=301,L]
+
+  # 2. Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://forestliving.community/$1 [R=301,L]
+
+  # 3. Handle Front Controller SPA Routing (fallback to index.html)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Disable Directory Browsing
+Options -Indexes
+
+# Security & Anti-Sniffing Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

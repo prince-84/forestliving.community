@@ -13,19 +13,15 @@ export default function Hero() {
       <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12 py-16 md:py-20 grid lg:grid-cols-2 gap-10 items-center w-full">
         <div>
           <h1 className="font-display text-3xl md:text-5xl lg:text-5xl leading-[1.15] mb-4 text-white font-bold">
-            Dubai First
+            Ghaf Woods Dubai
             <br />
-            Forest-Living Community
+            Forest-Living Apartments, Villas & Mansions
           </h1>
           <p className="uppercase text-base md:text-lg tracking-wider font-bold text-white mb-6">
             GHAF WOODS <span className="font-normal normal-case">By Majid Al Futtaim</span>
           </p>
           <p className="text-white/90 leading-relaxed mb-8 max-w-lg text-sm md:text-base">
-            Ghaf Woods, Dubai's first forest-living community by Majid Al Futtaim,
-            aims to become a premier destination in the UAE. Designed by renowned
-            architects, it offers exclusive 1, 2, and 3-bedroom apartments and
-            duplexes, spread across five to six floors, seamlessly blending
-            sustainability with luxury.
+            New Launch Property by Majid Al Futtaim in Ghaf Woods. Ghaf Woods, Dubai's first forest-living community by Majid Al Futtaim, aims to become a premier destination in the UAE. Designed by renowned architects, it offers exclusive 1, 2, and 3-bedroom apartments and duplexes, spread across five to six floors, seamlessly blending sustainability with luxury.
           </p>
           <a
             href="#register"

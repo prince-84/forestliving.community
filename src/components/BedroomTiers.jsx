@@ -1,7 +1,7 @@
 const tiers = [
-  { title: "1 Bedroom", price: "From AED 1.5M" },
-  { title: "2 Bedroom", price: "From AED 2.4M" },
-  { title: "3 Bedroom", price: "From AED 3.8M" },
+  { title: "1 Bedroom" },
+  { title: "2 Bedroom" },
+  { title: "3 Bedroom" },
 ];
 
 export default function BedroomTiers() {
@@ -12,14 +12,11 @@ export default function BedroomTiers() {
           {tiers.map((t) => (
             <div
               key={t.title}
-              className="bg-white rounded-2xl p-8 md:p-12 text-center shadow-md border border-gray-100/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-center items-center min-h-[180px] md:min-h-[220px]"
+              className="bg-white rounded-2xl p-8 md:p-12 text-center shadow-md border border-gray-100/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-center items-center min-h-[160px] md:min-h-[180px]"
             >
-              <h3 className="font-display text-3xl md:text-4xl lg:text-3xl font-bold text-black mb-3">
+              <h3 className="font-display text-3xl md:text-4xl lg:text-3xl font-bold text-black">
                 {t.title}
               </h3>
-              <p className="font-sans text-sm md:text-base text-gray-500 font-normal">
-                {t.price}
-              </p>
             </div>
           ))}
         </div>

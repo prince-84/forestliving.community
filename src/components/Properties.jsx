@@ -1,3 +1,5 @@
+import maravelleImg from "../assets/maravelle.jpg";
+
 const properties = [
   {
     name: "Distrikt at Ghaf Woods",
@@ -26,6 +28,13 @@ const properties = [
     desc: "New launch Ghaf Woods phase 2 at forest living phase 2, by Majid ul Futtaim: first-of-a-kind luxury apartments and duplex penthouses with resort-style amenities. The community is set to become one of the city's top destinations.",
     specs: "Bedroom 1-3   |   Apartments   |   Penthouses",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    name: "Maravelle at Ghaf Woods",
+    location: "Dubailand, Dubai",
+    desc: "Majid Al Futtaim has launched Maravelle Residences at Ghaf Woods, located in the heart of Dubai's nature. It offers a peaceful living experience with luxury 2, 3, and 4-bedroom forest-facing apartments.",
+    specs: "Bedroom 2 - 4   |   Apartments",
+    img: maravelleImg,
   },
 ];
 
@@ -76,9 +85,6 @@ function PropertyCard({ p }) {
 }
 
 export default function Properties() {
-  const topThree = properties.slice(0, 3);
-  const fourthProperty = properties[3];
-
   return (
     <section id="properties" className="bg-cream py-16 md:py-24">
       <div className="max-w-8xl mx-auto px-6 lg:px-12">
@@ -103,21 +109,15 @@ export default function Properties() {
           </div>
         </div>
 
-        {/* Top 3 Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-8">
-          {topThree.map((p) => (
+        {/* All 5 Cards Responsive Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {properties.map((p) => (
             <PropertyCard key={p.name} p={p} />
           ))}
-        </div>
-
-        {/* 4th Card Centered Below */}
-        <div className="flex justify-center">
-          <div className="w-full md:w-[calc(33.333%-1.33rem)] lg:w-[calc(33.333%-1.77rem)]">
-            <PropertyCard p={fourthProperty} />
-          </div>
         </div>
       </div>
     </section>
   );
 }
+
 
