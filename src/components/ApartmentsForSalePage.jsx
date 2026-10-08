@@ -355,7 +355,21 @@ export default function ApartmentsForSalePage({ onBack }) {
                   FIND APARTMENTS FOR SALE IN GHAF WOODS
                 </h2>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
-                  If you are searching for apartments for sale in Ghaf Woods, our team can help you explore available properties and compare suitable options.
+                  If you are searching for apartments for sale in Ghaf Woods, our team can help you explore available properties and compare suitable options. You can also explore{" "}
+                  <a
+                    href="/off-plan-properties-for-sale-in-ghaf-woods/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (window.location.pathname !== "/off-plan-properties-for-sale-in-ghaf-woods/") {
+                        window.history.pushState({}, "", "/off-plan-properties-for-sale-in-ghaf-woods/");
+                      }
+                      window.location.hash = "#off-plan-properties";
+                    }}
+                    className="text-[#6b7d56] hover:underline font-semibold"
+                  >
+                    Off-Plan Properties for Sale in Ghaf Woods
+                  </a>{" "}
+                  if you are looking for new developments with flexible payment plans and attractive investment opportunities.
                 </p>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
                   Share your preferred budget, apartment type, number of bedrooms, and other requirements to find properties that match your needs.
