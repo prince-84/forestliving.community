@@ -346,13 +346,27 @@ export default function OffPlanPropertiesPage({ onBack }) {
                   FIND OFF-PLAN PROPERTIES IN GHAF WOODS
                 </h2>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
-                  Finding the right off-plan property in Ghaf Woods starts with understanding your requirements.
+                  Finding the right off-plan property in Ghaf Woods starts with understanding your requirements and investment goals.
                 </p>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
-                  Whether you are looking for an apartment, villa, or another residential property, you can explore available developments and compare their current prices, payment terms, and property details.
+                  Whether you are looking for an apartment, villa, or another residential property, you can explore available developments and compare their current prices, payment terms, and property details. Buyers and investors can also enquire about an{" "}
+                  <a
+                    href="/investor-deal-ghaf-woods/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (window.location.pathname !== "/investor-deal-ghaf-woods/") {
+                        window.history.pushState({}, "", "/investor-deal-ghaf-woods/");
+                      }
+                      window.location.hash = "#investor-deal";
+                    }}
+                    className="text-[#6b7d56] hover:underline font-semibold"
+                  >
+                    Investor deal Ghaf Woods
+                  </a>{" "}
+                  to explore suitable opportunities based on their budget and investment plans.
                 </p>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                  Register your interest to explore suitable off-plan properties for sale in Ghaf Woods.
+                  Register your interest to explore suitable off-plan properties for sale in Ghaf Woods and find an option that matches your requirements.
                 </p>
               </div>
 
