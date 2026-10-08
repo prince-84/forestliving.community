@@ -136,15 +136,7 @@ export default function ApartmentsForSalePage({ onBack }) {
               {/* Breadcrumb / Back Link */}
               <div className="mb-6">
                 <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (onBack) onBack();
-                    else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                  }}
+                  href="/"
                   className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white font-medium transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,15 +161,7 @@ export default function ApartmentsForSalePage({ onBack }) {
               <p className="text-white/90 leading-relaxed mb-4 max-w-xl text-sm md:text-base font-sans">
                 Explore apartments for sale in{" "}
                 <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (onBack) onBack();
-                    else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                  }}
+                  href="/"
                   className="text-white underline font-semibold"
                 >
                   Ghaf Woods Dubai

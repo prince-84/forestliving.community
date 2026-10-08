@@ -136,15 +136,7 @@ export default function FullForestViewPage({ onBack }) {
               {/* Breadcrumb / Back Link */}
               <div className="mb-6">
                 <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (onBack) onBack();
-                    else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                  }}
+                  href="/"
                   className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white font-medium transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,15 +161,7 @@ export default function FullForestViewPage({ onBack }) {
               <p className="text-white/90 leading-relaxed mb-4 max-w-xl text-sm md:text-base font-sans">
                 Experience a peaceful lifestyle with a full forest view in{" "}
                 <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (onBack) onBack();
-                    else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                  }}
+                  href="/"
                   className="text-white underline font-semibold"
                 >
                   Ghaf Woods Dubai
@@ -346,12 +330,8 @@ export default function FullForestViewPage({ onBack }) {
                   Finding a property with a full forest view in Ghaf Woods Dubai depends on the exact location, unit, floor, and current availability. Buyers should also review the{" "}
                   <a
                     href="/ghaf-woods-Dubai-price-and-payment-plan"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.history.pushState({}, "", "/ghaf-woods-Dubai-price-and-payment-plan");
-                      window.dispatchEvent(new Event("popstate"));
-                      window.scrollTo(0, 0);
-                    }}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >
                     Ghaf Woods Dubai price and payment plan

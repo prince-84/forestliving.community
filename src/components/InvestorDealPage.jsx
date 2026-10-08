@@ -4,7 +4,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Properties from "./Properties";
 import RegisterForm from "./RegisterForm";
-import { setCanonicalUrl } from "../utils/canonical";
 
 const faqs = [
   {
@@ -55,7 +54,6 @@ export default function InvestorDealPage({ onBack }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "Investor Deal Ghaf Woods | Investment Opportunities in Dubai";
-    setCanonicalUrl("https://forestliving.community/investor-deal-ghaf-woods");
 
     let metaDesc = document.querySelector('meta[name="description"]');
     const prevDesc = metaDesc ? metaDesc.getAttribute("content") : "";
@@ -136,15 +134,7 @@ export default function InvestorDealPage({ onBack }) {
               {/* Breadcrumb / Back Link */}
               <div className="mb-6">
                 <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (onBack) onBack();
-                    else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                  }}
+                  href="/"
                   className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white font-medium transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,15 +159,7 @@ export default function InvestorDealPage({ onBack }) {
               <p className="text-white/90 leading-relaxed mb-4 max-w-xl text-sm md:text-base font-sans">
                 Explore an investor deal in{" "}
                 <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (onBack) onBack();
-                    else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                  }}
+                  href="/"
                   className="text-white underline font-semibold"
                 >
                   Ghaf Woods

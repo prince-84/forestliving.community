@@ -136,15 +136,7 @@ export default function ForestParkViewPage({ onBack }) {
               {/* Breadcrumb / Back Link */}
               <div className="mb-6">
                 <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (onBack) onBack();
-                    else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                  }}
+                  href="/"
                   className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white font-medium transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,15 +161,7 @@ export default function ForestParkViewPage({ onBack }) {
               <p className="text-white/90 leading-relaxed mb-4 max-w-xl text-sm md:text-base font-sans">
                 Discover a more natural way of living with a forest and park view in{" "}
                 <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (onBack) onBack();
-                    else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                  }}
+                  href="/"
                   className="text-white underline font-semibold"
                 >
                   Ghaf Woods Dubai
@@ -345,12 +329,8 @@ export default function ForestParkViewPage({ onBack }) {
                   Finding a forest and park view in Ghaf Woods Dubai depends on the available units and their exact location within the development. For buyers seeking a more immersive natural setting, properties offering a{" "}
                   <a
                     href="/full-forest-view-in-ghaf-woods-dubai"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.history.pushState({}, "", "/full-forest-view-in-ghaf-woods-dubai");
-                      window.dispatchEvent(new Event("popstate"));
-                      window.scrollTo(0, 0);
-                    }}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >
                     Full forest view in Ghaf Woods Dubai

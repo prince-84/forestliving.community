@@ -125,13 +125,6 @@ export default function Footer() {
                     <li key={page.id}>
                       <a
                         href={page.path || page.hash}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          const target = page.path || page.hash;
-                          window.history.pushState({}, "", target);
-                          window.dispatchEvent(new Event("popstate"));
-                          window.scrollTo(0, 0);
-                        }}
                         className="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block leading-snug"
                       >
                         {page.title}
@@ -151,13 +144,6 @@ export default function Footer() {
                     <li key={page.id}>
                       <a
                         href={page.path || page.hash}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          const target = page.path || page.hash;
-                          window.history.pushState({}, "", target);
-                          window.dispatchEvent(new Event("popstate"));
-                          window.scrollTo(0, 0);
-                        }}
                         className="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block leading-snug"
                       >
                         {page.title}
@@ -176,12 +162,6 @@ export default function Footer() {
                   <li>
                     <a
                       href="/privacy-policy/"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.history.pushState({}, "", "/privacy-policy/");
-                        window.dispatchEvent(new Event("popstate"));
-                        window.scrollTo(0, 0);
-                      }}
                       className="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block"
                     >
                       PRIVACY POLICY
@@ -190,12 +170,6 @@ export default function Footer() {
                   <li>
                     <a
                       href="/terms-and-conditions/"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.history.pushState({}, "", "/terms-and-conditions/");
-                        window.dispatchEvent(new Event("popstate"));
-                        window.scrollTo(0, 0);
-                      }}
                       className="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block"
                     >
                       TERMS & CONDITIONS

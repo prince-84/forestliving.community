@@ -41,15 +41,7 @@ export default function DummyPage({ page, onBack }) {
           {/* Breadcrumb / Back Link */}
           <div className="mb-8 flex items-center justify-between">
             <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                if (onBack) onBack();
-                else {
-                  window.history.pushState({}, "", "/");
-                  window.dispatchEvent(new Event("popstate"));
-                }
-              }}
+              href="/"
               className="inline-flex items-center gap-2 text-sm text-[#7d8f67] hover:text-[#5a6b47] font-medium transition-colors"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

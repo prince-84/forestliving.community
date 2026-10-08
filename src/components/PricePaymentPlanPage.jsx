@@ -149,15 +149,7 @@ export default function PricePaymentPlanPage({ onBack }) {
               {/* Breadcrumb / Back Link */}
               <div className="mb-6">
                 <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (onBack) onBack();
-                    else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                  }}
+                  href="/"
                   className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white font-medium transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
