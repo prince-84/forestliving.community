@@ -68,7 +68,7 @@ export default function PricePaymentPlanPage({ onBack }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "Ghaf Woods Dubai Price and Payment Plan";
-    setCanonicalUrl("https://forestliving.community/ghaf-woods-Dubai-price-and-payment-plan");
+    setCanonicalUrl("https://forestliving.community/ghaf-woods-dubai-price-and-payment-plan");
 
     let metaDesc = document.querySelector('meta[name="description"]');
     const prevDesc = metaDesc ? metaDesc.getAttribute("content") : "";

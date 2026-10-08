@@ -12,7 +12,7 @@ function generateSubpageHtmlPlugin() {
       if (!fs.existsSync(indexHtmlPath)) return;
 
       const routes = [
-        'ghaf-woods-Dubai-price-and-payment-plan',
+        'ghaf-woods-dubai-price-and-payment-plan',
         'full-forest-view-in-ghaf-woods-dubai',
         'forest-and-park-view-in-ghaf-woods-dubai',
         'investor-deal-ghaf-woods',

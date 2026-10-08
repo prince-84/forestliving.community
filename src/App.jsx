@@ -58,8 +58,8 @@ export default function App() {
       setCurrentRoute({ hash, path });
 
       const domain = "https://forestliving.community";
-      if (path.includes("ghaf-woods-Dubai-price-and-payment-plan") || path.includes("price-and-payment-plan") || hash === "#price-payment-plan") {
-        setCanonicalUrl(`${domain}/ghaf-woods-Dubai-price-and-payment-plan`);
+      if (path.toLowerCase().includes("ghaf-woods-dubai-price-and-payment-plan") || path.includes("price-and-payment-plan") || hash === "#price-payment-plan") {
+        setCanonicalUrl(`${domain}/ghaf-woods-dubai-price-and-payment-plan`);
       } else if (path.includes("full-forest-view-in-ghaf-woods-dubai") || hash === "#full-forest-view") {
         setCanonicalUrl(`${domain}/full-forest-view-in-ghaf-woods-dubai`);
       } else if (path.includes("forest-and-park-view-in-ghaf-woods-dubai") || hash === "#forest-park-view") {
@@ -139,7 +139,7 @@ export default function App() {
     return <TermsConditions onBack={handleBack} />;
   }
 
-  // 3. Page 1 (#price-payment-plan / /ghaf-woods-Dubai-price-and-payment-plan)
+  // 3. Page 1 (#price-payment-plan / /ghaf-woods-dubai-price-and-payment-plan)
   if (
     hash === "#price-payment-plan" ||
     path.toLowerCase().includes("ghaf-woods-dubai-price-and-payment-plan") ||

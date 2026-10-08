@@ -2,7 +2,7 @@ export const FOOTER_PAGES = [
   {
     id: "price-payment-plan",
     hash: "#price-payment-plan",
-    path: "/ghaf-woods-Dubai-price-and-payment-plan",
+    path: "/ghaf-woods-dubai-price-and-payment-plan",
     title: "Ghaf Woods Dubai Price and Payment Plan",
     subtitle: "Attractive and flexible payment plans for luxury forest apartments and villas in Ghaf Woods Dubai",
     category: "Pricing",
