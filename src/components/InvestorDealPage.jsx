@@ -327,10 +327,24 @@ export default function InvestorDealPage({ onBack }) {
                   Finding the right investor deal in Ghaf Woods starts with defining your investment requirements.
                 </p>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
-                  Decide your preferred budget, property type, payment structure, and investment timeline. You can then compare suitable properties and review their current availability and purchase terms.
+                  Decide your preferred budget, property type, payment structure, and investment timeline. If views are important to you, you can also consider properties offering a{" "}
+                  <a
+                    href="/forest-and-park-view-in-ghaf-woods-dubai/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (window.location.pathname !== "/forest-and-park-view-in-ghaf-woods-dubai/") {
+                        window.history.pushState({}, "", "/forest-and-park-view-in-ghaf-woods-dubai/");
+                      }
+                      window.location.hash = "#forest-park-view";
+                    }}
+                    className="text-[#6b7d56] hover:underline font-semibold"
+                  >
+                    Forest and park view in Ghaf Woods Dubai
+                  </a>{" "}
+                  for a more nature-focused living experience. You can then compare suitable properties and review their current availability and purchase terms.
                 </p>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                  Our team can help you explore available Ghaf Woods properties and provide current information for the units that match your requirements.
+                  Our team can help you explore available Ghaf Woods properties, including units with attractive views, and provide current information for the properties that match your requirements.
                 </p>
               </div>
 
