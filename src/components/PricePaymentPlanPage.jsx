@@ -274,15 +274,7 @@ export default function PricePaymentPlanPage({ onBack }) {
                 </h2>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
                   <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (onBack) onBack();
-                      else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                    }}
+                    href="/"
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >
                     Ghaf Woods
@@ -318,15 +310,7 @@ export default function PricePaymentPlanPage({ onBack }) {
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                   Get the latest information about{" "}
                   <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (onBack) onBack();
-                      else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                    }}
+                    href="/"
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >
                     Ghaf Woods Dubai

@@ -276,15 +276,7 @@ export default function ApartmentsForSalePage({ onBack }) {
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
                   Buyers can also explore off-plan apartments in{" "}
                   <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (onBack) onBack();
-                      else {
-                      window.history.pushState({}, "", "/");
-                      window.dispatchEvent(new Event("popstate"));
-                    }
-                    }}
+                    href="/"
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >
                     Ghaf Woods

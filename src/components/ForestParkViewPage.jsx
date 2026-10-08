@@ -261,12 +261,7 @@ export default function ForestParkViewPage({ onBack }) {
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
                   The nature-focused setting of{" "}
                   <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (onBack) onBack();
-                      else window.location.hash = "";
-                    }}
+                    href="/"
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >
                     Ghaf Woods

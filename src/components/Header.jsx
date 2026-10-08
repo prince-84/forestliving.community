@@ -36,7 +36,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-md border-b border-gray-100 transition-all duration-200">
       <div className="max-w-8xl mx-auto flex items-center justify-between px-6 lg:px-12 py-4">
-        <a href="#" onClick={handleLogoClick} className="flex items-center gap-3 cursor-pointer">
+        <a href="/" onClick={handleLogoClick} className="flex items-center gap-3 cursor-pointer">
           <img src={logoSvg} alt="Forest Living Logo" className="h-8 md:h-9 w-auto" />
         </a>
 
