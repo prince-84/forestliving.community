@@ -334,7 +334,21 @@ export default function ForestParkViewPage({ onBack }) {
                   FIND FOREST AND PARK VIEW PROPERTIES IN GHAF WOODS
                 </h2>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
-                  Finding a forest and park view in Ghaf Woods Dubai depends on the available units and their exact location within the development.
+                  Finding a forest and park view in Ghaf Woods Dubai depends on the available units and their exact location within the development. For buyers seeking a more immersive natural setting, properties offering a{" "}
+                  <a
+                    href="/full-forest-view-in-ghaf-woods-dubai/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (window.location.pathname !== "/full-forest-view-in-ghaf-woods-dubai/") {
+                        window.history.pushState({}, "", "/full-forest-view-in-ghaf-woods-dubai/");
+                      }
+                      window.location.hash = "#full-forest-view";
+                    }}
+                    className="text-[#6b7d56] hover:underline font-semibold"
+                  >
+                    Full forest view in Ghaf Woods Dubai
+                  </a>{" "}
+                  can be explored based on current availability.
                 </p>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                   If you are looking for a specific view, share your preferred property type and requirements with our team. We can help you explore suitable properties and provide the latest available information.
