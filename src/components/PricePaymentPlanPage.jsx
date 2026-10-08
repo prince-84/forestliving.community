@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Properties from "./Properties";
 import RegisterForm from "./RegisterForm";
+import { setCanonicalUrl } from "../utils/canonical";
 
 const averagePrices = [
   { community: "Maravelle Residences 2", price: "6,368,625" },
@@ -67,6 +68,7 @@ export default function PricePaymentPlanPage({ onBack }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "Ghaf Woods Dubai Price and Payment Plan";
+    setCanonicalUrl("https://forestliving.community/ghaf-woods-Dubai-price-and-payment-plan");
 
     let metaDesc = document.querySelector('meta[name="description"]');
     const prevDesc = metaDesc ? metaDesc.getAttribute("content") : "";

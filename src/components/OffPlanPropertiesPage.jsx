@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Properties from "./Properties";
 import RegisterForm from "./RegisterForm";
+import { setCanonicalUrl } from "../utils/canonical";
 
 const faqs = [
   {
@@ -54,6 +55,7 @@ export default function OffPlanPropertiesPage({ onBack }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "Off-Plan Properties for Sale in Ghaf Woods | Dubai";
+    setCanonicalUrl("https://forestliving.community/off-plan-properties-for-sale-in-ghaf-woods");
 
     let metaDesc = document.querySelector('meta[name="description"]');
     const prevDesc = metaDesc ? metaDesc.getAttribute("content") : "";

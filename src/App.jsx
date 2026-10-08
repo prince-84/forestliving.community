@@ -26,6 +26,8 @@ import VillasForSalePage from "./components/VillasForSalePage";
 import DummyPage from "./components/DummyPage";
 import { FOOTER_PAGES } from "./data/footerPages";
 
+import { setCanonicalUrl } from "./utils/canonical";
+
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState(() => {
     const hash = typeof window !== "undefined" ? window.location.hash : "";
@@ -55,6 +57,29 @@ export default function App() {
 
       setCurrentRoute({ hash, path });
 
+      const domain = "https://forestliving.community";
+      if (path.includes("ghaf-woods-Dubai-price-and-payment-plan") || path.includes("price-and-payment-plan") || hash === "#price-payment-plan") {
+        setCanonicalUrl(`${domain}/ghaf-woods-Dubai-price-and-payment-plan`);
+      } else if (path.includes("full-forest-view-in-ghaf-woods-dubai") || hash === "#full-forest-view") {
+        setCanonicalUrl(`${domain}/full-forest-view-in-ghaf-woods-dubai`);
+      } else if (path.includes("forest-and-park-view-in-ghaf-woods-dubai") || hash === "#forest-park-view") {
+        setCanonicalUrl(`${domain}/forest-and-park-view-in-ghaf-woods-dubai`);
+      } else if (path.includes("investor-deal-ghaf-woods") || hash === "#investor-deal") {
+        setCanonicalUrl(`${domain}/investor-deal-ghaf-woods`);
+      } else if (path.includes("off-plan-properties-for-sale-in-ghaf-woods") || hash === "#off-plan-properties") {
+        setCanonicalUrl(`${domain}/off-plan-properties-for-sale-in-ghaf-woods`);
+      } else if (path.includes("apartments-for-sale-in-ghaf-woods") || hash === "#apartments-for-sale") {
+        setCanonicalUrl(`${domain}/apartments-for-sale-in-ghaf-woods/`);
+      } else if (path.includes("villas-for-sale-in-ghaf-woods") || hash === "#villas-for-sale") {
+        setCanonicalUrl(`${domain}/villas-for-sale-in-ghaf-woods/`);
+      } else if (path.includes("privacy-policy") || hash === "#privacy" || hash === "#privacy-policy") {
+        setCanonicalUrl(`${domain}/privacy-policy/`);
+      } else if (path.includes("terms-and-conditions") || hash === "#terms" || hash === "#terms-and-conditions") {
+        setCanonicalUrl(`${domain}/terms-and-conditions/`);
+      } else {
+        setCanonicalUrl(`${domain}/`);
+      }
+
       const matchedFooterPage = FOOTER_PAGES.find((p) => p.hash === hash || (p.path && path.includes(p.path.replace(/\//g, ""))));
       const isSubpage =
         hash === "#privacy" ||
@@ -74,6 +99,8 @@ export default function App() {
         }, 100);
       }
     };
+
+    handleRouteChange();
 
     window.addEventListener("hashchange", handleRouteChange);
     window.addEventListener("popstate", handleRouteChange);

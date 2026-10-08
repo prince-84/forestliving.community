@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Properties from "./Properties";
 import RegisterForm from "./RegisterForm";
+import { setCanonicalUrl } from "../utils/canonical";
 
 const faqs = [
   {
@@ -54,6 +55,7 @@ export default function FullForestViewPage({ onBack }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "Full Forest View in Ghaf Woods Dubai";
+    setCanonicalUrl("https://forestliving.community/full-forest-view-in-ghaf-woods-dubai");
 
     let metaDesc = document.querySelector('meta[name="description"]');
     const prevDesc = metaDesc ? metaDesc.getAttribute("content") : "";

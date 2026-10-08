@@ -1,12 +1,16 @@
 import { useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { setCanonicalUrl } from "../utils/canonical";
 
 export default function DummyPage({ page, onBack }) {
   useEffect(() => {
     if (!page) return;
     const prevTitle = document.title;
     document.title = `${page.title} | ForestLiving`;
+    if (page.path) {
+      setCanonicalUrl(`https://forestliving.community${page.path}`);
+    }
 
     let metaDesc = document.querySelector('meta[name="description"]');
     const prevDesc = metaDesc ? metaDesc.getAttribute("content") : "";
