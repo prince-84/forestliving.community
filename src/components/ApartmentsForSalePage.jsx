@@ -379,21 +379,9 @@ export default function ApartmentsForSalePage({ onBack }) {
                   </a>{" "}
                   if you are looking for new developments with flexible payment plans and attractive investment opportunities.
                 </p>
-                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                   Share your preferred budget, apartment type, number of bedrooms, and other requirements to find properties that match your needs.
                 </p>
-
-                <a
-                  href="#register"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const regForm = document.getElementById("register");
-                    if (regForm) regForm.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="inline-block bg-[#6B7D56] hover:bg-[#586847] text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-sm transition-colors"
-                >
-                  Find Your Ghaf Woods Apartment &rarr;
-                </a>
               </div>
 
             </div>
