@@ -3,24 +3,53 @@ import logoSvg from "../assets/logo.svg";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const links = ["About Us", "Gallery", "Payment Plan", "Location"];
+  const links = [
+    { label: "About Us", hash: "#about-us" },
+    { label: "Gallery", hash: "#gallery" },
+    { label: "Payment Plan", hash: "#payment-plan" },
+    { label: "Location", hash: "#location" },
+  ];
+
+  const handleNavClick = (e, targetHash) => {
+    if (window.location.pathname !== "/") {
+      window.history.pushState({}, "", "/");
+    }
+    window.location.hash = targetHash;
+
+    setTimeout(() => {
+      const el = document.querySelector(targetHash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (window.location.pathname !== "/") {
+      window.history.pushState({}, "", "/");
+    }
+    window.location.hash = "";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
-    <header className="relative w-full bg-white z-30 shadow-sm border-b border-gray-100">
+    <header className="sticky top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-md border-b border-gray-100 transition-all duration-200">
       <div className="max-w-8xl mx-auto flex items-center justify-between px-6 lg:px-12 py-4">
-        <div className="flex items-center gap-3">
+        <a href="#" onClick={handleLogoClick} className="flex items-center gap-3 cursor-pointer">
           <img src={logoSvg} alt="Forest Living Logo" className="h-8 md:h-9 w-auto" />
-        </div>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-10 text-forest-900 text-sm font-medium">
-          {links.map((l) => (
+          {links.map((item) => (
             <a
-              key={l}
-              href={`#${l.toLowerCase().replace(/\s/g, "-")}`}
+              key={item.label}
+              href={item.hash}
+              onClick={(e) => handleNavClick(e, item.hash)}
               className="hover:text-forest-600 transition-colors"
             >
-              {l}
+              {item.label}
             </a>
           ))}
         </nav>
@@ -44,14 +73,17 @@ export default function Header() {
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3">
-          {links.map((l) => (
+          {links.map((item) => (
             <a
-              key={l}
-              href={`#${l.toLowerCase().replace(/\s/g, "-")}`}
-              onClick={() => setMobileMenuOpen(false)}
+              key={item.label}
+              href={item.hash}
+              onClick={(e) => {
+                setMobileMenuOpen(false);
+                handleNavClick(e, item.hash);
+              }}
               className="block text-forest-900 text-base font-medium py-2 hover:text-forest-600 transition-colors"
             >
-              {l}
+              {item.label}
             </a>
           ))}
         </div>
@@ -59,5 +91,3 @@ export default function Header() {
     </header>
   );
 }
-
-

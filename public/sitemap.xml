@@ -1,21 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 1. Homepage -->
   <url>
     <loc>https://forestliving.community/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- 2. Page 1: Price and Payment Plan in Ghaf Woods Dubai -->
   <url>
-    <loc>https://forestliving.community/#privacy</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://forestliving.community/price-and-payment-plan-in-ghaf-woods-dubai/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
+
+  <!-- 3. Page 2: Full Forest View in Ghaf Woods Dubai -->
   <url>
-    <loc>https://forestliving.community/#terms</loc>
-    <lastmod>2026-09-30</lastmod>
+    <loc>https://forestliving.community/full-forest-view-in-ghaf-woods-dubai/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 4. Page 3: Forest and Park View in Ghaf Woods Dubai -->
+  <url>
+    <loc>https://forestliving.community/forest-and-park-view-in-ghaf-woods-dubai/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 5. Page 4: Investor Deal Ghaf Woods -->
+  <url>
+    <loc>https://forestliving.community/investor-deal-ghaf-woods/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 6. Page 5: Off-Plan Properties for Sale in Ghaf Woods -->
+  <url>
+    <loc>https://forestliving.community/off-plan-properties-for-sale-in-ghaf-woods/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 7. Page 6: Apartments for Sale in Ghaf Woods -->
+  <url>
+    <loc>https://forestliving.community/apartments-for-sale-in-ghaf-woods/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 8. Page 7: Villas for Sale in Ghaf Woods -->
+  <url>
+    <loc>https://forestliving.community/villas-for-sale-in-ghaf-woods/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 9. Privacy Policy -->
+  <url>
+    <loc>https://forestliving.community/privacy-policy/</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 10. Terms & Conditions -->
+  <url>
+    <loc>https://forestliving.community/terms-and-conditions/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

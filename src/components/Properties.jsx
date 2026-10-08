@@ -95,7 +95,7 @@ export default function Properties() {
               LATEST PROPERTIES
             </span>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black">
-              Ghaf Woods Properties
+              New Ghaf Wood Projects by MAF
             </h2>
           </div>
 

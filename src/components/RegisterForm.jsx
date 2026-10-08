@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -8,9 +8,45 @@ const WEBHOOK_TOKEN = "fsa_n8n_secret_token_2026_x99a";
 export default function RegisterForm() {
   const [form, setForm] = useState({ name: "", email: "" });
   const [phone, setPhone] = useState("");
+  const [defaultCountry, setDefaultCountry] = useState("AE");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+
+  useEffect(() => {
+    let isMounted = true;
+    const detectCountry = async () => {
+      try {
+        const res = await fetch("https://api.country.is");
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.country && isMounted) {
+            setDefaultCountry(data.country.toUpperCase());
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn("api.country.is failed, trying secondary IP service:", err);
+      }
+
+      try {
+        const res = await fetch("https://ipwho.is/");
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.country_code && isMounted) {
+            setDefaultCountry(data.country_code.toUpperCase());
+          }
+        }
+      } catch (err) {
+        console.warn("Fallback to AE due to IP lookup failure:", err);
+      }
+    };
+
+    detectCountry();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const handleChange = (e) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -116,8 +152,9 @@ export default function RegisterForm() {
               <div>
                 <label className="text-xs text-forest-600 mb-1 block">Phone</label>
                 <PhoneInput
+                  key={defaultCountry}
                   international
-                  defaultCountry="AE"
+                  defaultCountry={defaultCountry}
                   value={phone}
                   onChange={setPhone}
                   className="phone-input-wrapper"

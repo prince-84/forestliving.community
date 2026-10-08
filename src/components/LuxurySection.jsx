@@ -4,7 +4,7 @@ import about3 from "../assets/about_3.png";
 
 export default function LuxurySection() {
   return (
-    <section className="bg-cream py-16 md:py-24 overflow-hidden">
+    <section id="about-us" className="bg-cream py-16 md:py-24 overflow-hidden">
       <div className="max-w-8xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
         {/* Left Column - Perfectly Balanced 3 Image Grid */}
         <div className="grid grid-cols-2 gap-4 h-[380px] md:h-[440px] lg:h-[480px]">
