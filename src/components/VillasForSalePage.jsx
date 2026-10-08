@@ -365,7 +365,14 @@ export default function VillasForSalePage({ onBack }) {
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
                   If you are looking for villas for sale in Ghaf Woods, our team can help you explore available properties and compare suitable options. Along with villas, buyers can also explore{" "}
                   <a
-                    href="#apartments-for-sale"
+                    href="/apartments-for-sale-in-ghaf-woods/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (window.location.pathname !== "/apartments-for-sale-in-ghaf-woods/") {
+                        window.history.pushState({}, "", "/apartments-for-sale-in-ghaf-woods/");
+                      }
+                      window.location.hash = "#apartments-for-sale";
+                    }}
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >
                     Apartments for Sale in Ghaf Woods
