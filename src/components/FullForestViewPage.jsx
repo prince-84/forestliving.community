@@ -227,11 +227,15 @@ export default function FullForestViewPage({ onBack }) {
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
                   A full forest view in{" "}
                   <a
-                    href="#"
+                    href="/"
                     onClick={(e) => {
                       e.preventDefault();
                       if (onBack) onBack();
-                      else window.location.hash = "";
+                      else {
+                        window.history.pushState({}, "", "/");
+                        window.location.hash = "";
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
                     }}
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >
