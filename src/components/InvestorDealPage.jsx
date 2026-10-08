@@ -335,10 +335,10 @@ export default function InvestorDealPage({ onBack }) {
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
                   Decide your preferred budget, property type, payment structure, and investment timeline. If views are important to you, you can also consider properties offering a{" "}
                   <a
-                    href="/forest-and-park-view-in-ghaf-woods-dubai/"
+                    href="/forest-and-park-view-in-ghaf-woods-dubai"
                     onClick={(e) => {
                       e.preventDefault();
-                      window.history.pushState({}, "", "/forest-and-park-view-in-ghaf-woods-dubai/");
+                      window.history.pushState({}, "", "/forest-and-park-view-in-ghaf-woods-dubai");
                       window.dispatchEvent(new Event("popstate"));
                       window.scrollTo(0, 0);
                     }}

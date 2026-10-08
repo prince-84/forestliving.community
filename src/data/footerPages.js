@@ -2,7 +2,7 @@ export const FOOTER_PAGES = [
   {
     id: "price-payment-plan",
     hash: "#price-payment-plan",
-    path: "/price-and-payment-plan-in-ghaf-woods-dubai/",
+    path: "/ghaf-woods-Dubai-price-and-payment-plan",
     title: "Ghaf Woods Dubai Price and Payment Plan",
     subtitle: "Attractive and flexible payment plans for luxury forest apartments and villas in Ghaf Woods Dubai",
     category: "Pricing",
@@ -31,7 +31,7 @@ export const FOOTER_PAGES = [
   {
     id: "full-forest-view",
     hash: "#full-forest-view",
-    path: "/full-forest-view-in-ghaf-woods-dubai/",
+    path: "/full-forest-view-in-ghaf-woods-dubai",
     title: "Full Forest View in Ghaf Woods Dubai",
     subtitle: "Immerse yourself in 360-degree panoramic views of lush evergreen woodland canopy",
     category: "Residences",
@@ -54,7 +54,7 @@ export const FOOTER_PAGES = [
   {
     id: "forest-park-view",
     hash: "#forest-park-view",
-    path: "/forest-and-park-view-in-ghaf-woods-dubai/",
+    path: "/forest-and-park-view-in-ghaf-woods-dubai",
     title: "Forest and Park View in Ghaf Woods Dubai",
     subtitle: "Enjoy serene dual outlooks across lush landscaped central parks and woodland trails",
     category: "Parks & Views",
@@ -77,7 +77,7 @@ export const FOOTER_PAGES = [
   {
     id: "investor-deal",
     hash: "#investor-deal",
-    path: "/investor-deal-ghaf-woods/",
+    path: "/investor-deal-ghaf-woods",
     title: "Investor Deal Ghaf Woods",
     subtitle: "High-yield investment opportunities with strong capital appreciation in Dubailand",
     category: "Investment",
@@ -100,7 +100,7 @@ export const FOOTER_PAGES = [
   {
     id: "off-plan-properties",
     hash: "#off-plan-properties",
-    path: "/off-plan-properties-for-sale-in-ghaf-woods/",
+    path: "/off-plan-properties-for-sale-in-ghaf-woods",
     title: "Off-Plan Properties for Sale in Ghaf Woods",
     subtitle: "Explore new launch off-plan apartments and townhomes with launch phase pricing",
     category: "Off-Plan",

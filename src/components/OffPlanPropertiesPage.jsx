@@ -357,10 +357,10 @@ export default function OffPlanPropertiesPage({ onBack }) {
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
                   Whether you are looking for an apartment, villa, or another residential property, you can explore available developments and compare their current prices, payment terms, and property details. Buyers and investors can also enquire about an{" "}
                   <a
-                    href="/investor-deal-ghaf-woods/"
+                    href="/investor-deal-ghaf-woods"
                     onClick={(e) => {
                       e.preventDefault();
-                      window.history.pushState({}, "", "/investor-deal-ghaf-woods/");
+                      window.history.pushState({}, "", "/investor-deal-ghaf-woods");
                       window.dispatchEvent(new Event("popstate"));
                       window.scrollTo(0, 0);
                     }}

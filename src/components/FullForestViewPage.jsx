@@ -343,10 +343,10 @@ export default function FullForestViewPage({ onBack }) {
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
                   Finding a property with a full forest view in Ghaf Woods Dubai depends on the exact location, unit, floor, and current availability. Buyers should also review the{" "}
                   <a
-                    href="/price-and-payment-plan-in-ghaf-woods-dubai/"
+                    href="/ghaf-woods-Dubai-price-and-payment-plan"
                     onClick={(e) => {
                       e.preventDefault();
-                      window.history.pushState({}, "", "/price-and-payment-plan-in-ghaf-woods-dubai/");
+                      window.history.pushState({}, "", "/ghaf-woods-Dubai-price-and-payment-plan");
                       window.dispatchEvent(new Event("popstate"));
                       window.scrollTo(0, 0);
                     }}

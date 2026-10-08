@@ -112,8 +112,12 @@ export default function App() {
     return <TermsConditions onBack={handleBack} />;
   }
 
-  // 3. Page 1 (#price-payment-plan / /price-and-payment-plan-in-ghaf-woods-dubai/)
-  if (hash === "#price-payment-plan" || path.includes("price-and-payment-plan-in-ghaf-woods-dubai")) {
+  // 3. Page 1 (#price-payment-plan / /ghaf-woods-Dubai-price-and-payment-plan)
+  if (
+    hash === "#price-payment-plan" ||
+    path.toLowerCase().includes("ghaf-woods-dubai-price-and-payment-plan") ||
+    path.includes("price-and-payment-plan")
+  ) {
     return <PricePaymentPlanPage onBack={handleBack} />;
   }
 
