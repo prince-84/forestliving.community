@@ -138,7 +138,10 @@ export default function OffPlanPropertiesPage({ onBack }) {
                   onClick={(e) => {
                     e.preventDefault();
                     if (onBack) onBack();
-                    else window.location.hash = "";
+                    else {
+                      window.history.pushState({}, "", "/");
+                      window.dispatchEvent(new Event("popstate"));
+                    }
                   }}
                   className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white font-medium transition-colors"
                 >
@@ -168,7 +171,10 @@ export default function OffPlanPropertiesPage({ onBack }) {
                   onClick={(e) => {
                     e.preventDefault();
                     if (onBack) onBack();
-                    else window.location.hash = "";
+                    else {
+                      window.history.pushState({}, "", "/");
+                      window.dispatchEvent(new Event("popstate"));
+                    }
                   }}
                   className="text-white underline font-semibold"
                 >
@@ -354,10 +360,9 @@ export default function OffPlanPropertiesPage({ onBack }) {
                     href="/investor-deal-ghaf-woods/"
                     onClick={(e) => {
                       e.preventDefault();
-                      if (window.location.pathname !== "/investor-deal-ghaf-woods/") {
-                        window.history.pushState({}, "", "/investor-deal-ghaf-woods/");
-                      }
-                      window.location.hash = "#investor-deal";
+                      window.history.pushState({}, "", "/investor-deal-ghaf-woods/");
+                      window.dispatchEvent(new Event("popstate"));
+                      window.scrollTo(0, 0);
                     }}
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >

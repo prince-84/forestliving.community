@@ -138,7 +138,10 @@ export default function FullForestViewPage({ onBack }) {
                   onClick={(e) => {
                     e.preventDefault();
                     if (onBack) onBack();
-                    else window.location.hash = "";
+                    else {
+                      window.history.pushState({}, "", "/");
+                      window.dispatchEvent(new Event("popstate"));
+                    }
                   }}
                   className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white font-medium transition-colors"
                 >
@@ -168,7 +171,10 @@ export default function FullForestViewPage({ onBack }) {
                   onClick={(e) => {
                     e.preventDefault();
                     if (onBack) onBack();
-                    else window.location.hash = "";
+                    else {
+                      window.history.pushState({}, "", "/");
+                      window.dispatchEvent(new Event("popstate"));
+                    }
                   }}
                   className="text-white underline font-semibold"
                 >
@@ -233,7 +239,7 @@ export default function FullForestViewPage({ onBack }) {
                       if (onBack) onBack();
                       else {
                         window.history.pushState({}, "", "/");
-                        window.location.hash = "";
+                        window.dispatchEvent(new Event("popstate"));
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }
                     }}
@@ -340,10 +346,9 @@ export default function FullForestViewPage({ onBack }) {
                     href="/price-and-payment-plan-in-ghaf-woods-dubai/"
                     onClick={(e) => {
                       e.preventDefault();
-                      if (window.location.pathname !== "/price-and-payment-plan-in-ghaf-woods-dubai/") {
-                        window.history.pushState({}, "", "/price-and-payment-plan-in-ghaf-woods-dubai/");
-                      }
-                      window.location.hash = "#price-payment-plan";
+                      window.history.pushState({}, "", "/price-and-payment-plan-in-ghaf-woods-dubai/");
+                      window.dispatchEvent(new Event("popstate"));
+                      window.scrollTo(0, 0);
                     }}
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >

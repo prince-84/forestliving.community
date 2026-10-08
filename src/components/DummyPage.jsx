@@ -41,7 +41,10 @@ export default function DummyPage({ page, onBack }) {
               onClick={(e) => {
                 e.preventDefault();
                 if (onBack) onBack();
-                else window.location.hash = "";
+                else {
+                  window.history.pushState({}, "", "/");
+                  window.dispatchEvent(new Event("popstate"));
+                }
               }}
               className="inline-flex items-center gap-2 text-sm text-[#7d8f67] hover:text-[#5a6b47] font-medium transition-colors"
             >
@@ -126,7 +129,10 @@ export default function DummyPage({ page, onBack }) {
                 onClick={(e) => {
                   e.preventDefault();
                   if (onBack) onBack();
-                  else window.location.hash = "";
+                  else {
+                  window.history.pushState({}, "", "/");
+                  window.dispatchEvent(new Event("popstate"));
+                }
                   setTimeout(() => {
                     const regElem = document.getElementById("register");
                     if (regElem) regElem.scrollIntoView({ behavior: "smooth" });

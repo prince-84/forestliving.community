@@ -138,7 +138,10 @@ export default function ForestParkViewPage({ onBack }) {
                   onClick={(e) => {
                     e.preventDefault();
                     if (onBack) onBack();
-                    else window.location.hash = "";
+                    else {
+                      window.history.pushState({}, "", "/");
+                      window.dispatchEvent(new Event("popstate"));
+                    }
                   }}
                   className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white font-medium transition-colors"
                 >
@@ -168,7 +171,10 @@ export default function ForestParkViewPage({ onBack }) {
                   onClick={(e) => {
                     e.preventDefault();
                     if (onBack) onBack();
-                    else window.location.hash = "";
+                    else {
+                      window.history.pushState({}, "", "/");
+                      window.dispatchEvent(new Event("popstate"));
+                    }
                   }}
                   className="text-white underline font-semibold"
                 >
@@ -339,10 +345,9 @@ export default function ForestParkViewPage({ onBack }) {
                     href="/full-forest-view-in-ghaf-woods-dubai/"
                     onClick={(e) => {
                       e.preventDefault();
-                      if (window.location.pathname !== "/full-forest-view-in-ghaf-woods-dubai/") {
-                        window.history.pushState({}, "", "/full-forest-view-in-ghaf-woods-dubai/");
-                      }
-                      window.location.hash = "#full-forest-view";
+                      window.history.pushState({}, "", "/full-forest-view-in-ghaf-woods-dubai/");
+                      window.dispatchEvent(new Event("popstate"));
+                      window.scrollTo(0, 0);
                     }}
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >

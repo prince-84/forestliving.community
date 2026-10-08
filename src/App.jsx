@@ -35,26 +35,34 @@ export default function App() {
 
   useEffect(() => {
     const handleRouteChange = () => {
-      const hash = window.location.hash;
+      let hash = window.location.hash;
       const path = window.location.pathname;
+
+      const subpageHashes = [
+        "#price-payment-plan",
+        "#full-forest-view",
+        "#forest-park-view",
+        "#investor-deal",
+        "#off-plan-properties",
+        "#apartments-for-sale",
+        "#villas-for-sale",
+      ];
+
+      if (subpageHashes.includes(hash) && path.length > 1 && path !== "/") {
+        window.history.replaceState({}, "", path);
+        hash = "";
+      }
+
       setCurrentRoute({ hash, path });
 
-      const matchedFooterPage = FOOTER_PAGES.find((p) => p.hash === hash);
+      const matchedFooterPage = FOOTER_PAGES.find((p) => p.hash === hash || (p.path && path.includes(p.path.replace(/\//g, ""))));
       const isSubpage =
         hash === "#privacy" ||
         hash === "#privacy-policy" ||
         hash === "#terms" ||
         hash === "#terms-and-conditions" ||
         matchedFooterPage ||
-        [
-          "#price-payment-plan",
-          "#full-forest-view",
-          "#forest-park-view",
-          "#investor-deal",
-          "#off-plan-properties",
-          "#apartments-for-sale",
-          "#villas-for-sale",
-        ].includes(hash) ||
+        subpageHashes.includes(hash) ||
         (path.length > 1 && path !== "/");
 
       if (isSubpage) {
@@ -70,7 +78,7 @@ export default function App() {
     window.addEventListener("hashchange", handleRouteChange);
     window.addEventListener("popstate", handleRouteChange);
 
-    if (window.location.hash) {
+    if (window.location.hash && !window.location.pathname.includes("-in-ghaf-woods") && !window.location.pathname.includes("investor-deal")) {
       setTimeout(() => {
         const el = document.querySelector(window.location.hash);
         if (el) el.scrollIntoView({ behavior: "smooth" });
