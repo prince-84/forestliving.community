@@ -5,16 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
     <title>Ghaf Woods Dubai by Majid Al Futtaim Forest Living Community</title>
     <meta name="description" content="Find New projects Ghaf Woods Dubai by Majid Al Futtaim, a forest living community with 40,000 trees. Explore 1–3 bedroom apartments, garden units and duplexes." />
-    
+    <meta name="keywords" content="Ghaf Woods Dubai, Majid Al Futtaim, Forest Living Community, Ghaf Woods apartments, Dubailand properties, forest living Dubai, Ghaf Woods floor plans" />
+
     <!-- Google Analytics GA4 (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7VZMPT0TZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-Y7VZMPT0TZ');
     </script>
 
@@ -34,13 +36,13 @@
     <meta name="googlebot" content="index, follow" />
 
     <!-- Canonical Tag -->
-    <link rel="canonical" href="https://forestliving.community/" />
+    <link rel="canonical" href="https://forestliving.community" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Ghaf Woods Dubai by Majid Al Futtaim Forest Living Community" />
     <meta property="og:description" content="Find New projects Ghaf Woods Dubai by Majid Al Futtaim, a forest living community with 40,000 trees. Explore 1–3 bedroom apartments, garden units and duplexes." />
     <meta property="og:image" content="https://forestliving.community/background-image.jpg" />
-    <meta property="og:url" content="https://forestliving.community/" />
+    <meta property="og:url" content="https://forestliving.community" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Forest Living Community" />
     <meta property="og:locale" content="en_US" />
@@ -50,7 +52,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ghaf Woods Dubai by Majid Al Futtaim Forest Living Community" />
     <meta name="twitter:description" content="Find New projects Ghaf Woods Dubai by Majid Al Futtaim, a forest living community with 40,000 trees. Explore 1–3 bedroom apartments, garden units and duplexes." />
-    <meta name="twitter:url" content="https://forestliving.community/" />
+    <meta name="twitter:url" content="https://forestliving.community" />
     <meta name="twitter:image" content="https://forestliving.community/background-image.jpg" />
     <meta name="twitter:image:alt" content="Ghaf Woods Dubai Forest Living Community" />
 
@@ -164,12 +166,683 @@
     }
     </script>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Vite JS Script Module -->
+    <script type="module" src="/src/main.js"></script>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body class="bg-cream text-forest-900 font-sans antialiased min-h-screen flex flex-col justify-between">
+    <div>
+      <!-- HEADER -->
+      <header class="sticky top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-md border-b border-gray-100 transition-all duration-200">
+        <div class="max-w-8xl mx-auto flex items-center justify-between px-6 lg:px-12 py-4">
+          <a href="/" class="flex items-center gap-3 cursor-pointer" aria-label="Forest Living Homepage">
+            <img src="/src/assets/logo.svg" alt="Forest Living Logo" class="h-8 md:h-9 w-auto" />
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center gap-10 text-forest-900 text-sm font-medium">
+            <a href="#about-us" class="hover:text-forest-600 transition-colors">About Us</a>
+            <a href="#gallery" class="hover:text-forest-600 transition-colors">Gallery</a>
+            <a href="#payment-plan" class="hover:text-forest-600 transition-colors">Payment Plan</a>
+            <a href="#location" class="hover:text-forest-600 transition-colors">Location</a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-forest-900 focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3">
+          <a href="#about-us" class="block text-forest-900 text-base font-medium py-2 hover:text-forest-600 transition-colors">About Us</a>
+          <a href="#gallery" class="block text-forest-900 text-base font-medium py-2 hover:text-forest-600 transition-colors">Gallery</a>
+          <a href="#payment-plan" class="block text-forest-900 text-base font-medium py-2 hover:text-forest-600 transition-colors">Payment Plan</a>
+          <a href="#location" class="block text-forest-900 text-base font-medium py-2 hover:text-forest-600 transition-colors">Location</a>
+        </div>
+      </header>
+
+      <main>
+        <!-- HERO SECTION -->
+        <section class="relative text-white overflow-hidden bg-cover bg-center bg-no-repeat min-h-[580px] flex items-center" style="background-image: url('/src/assets/background-image.jpg');">
+          <div class="absolute inset-0 z-0 pointer-events-none" style="background-color: #7d8f67; opacity: 0.6;"></div>
+
+          <div class="relative z-10 max-w-8xl mx-auto px-6 lg:px-12 py-16 md:py-20 grid lg:grid-cols-2 gap-10 items-center w-full">
+            <div>
+              <h1 class="font-display text-3xl md:text-5xl lg:text-5xl leading-[1.15] mb-4 text-white font-bold">
+                Ghaf Woods Dubai
+                <br />
+                Forest-Living Apartments, Villas &amp; Mansions
+              </h1>
+              <p class="uppercase text-base md:text-lg tracking-wider font-bold text-white mb-6">
+                GHAF WOODS <span class="font-normal normal-case">By Majid Al Futtaim</span>
+              </p>
+              <p class="text-white/90 leading-relaxed mb-8 max-w-lg text-sm md:text-base font-sans">
+                New Launch Property by Majid Al Futtaim in Ghaf Woods. Ghaf Woods, Dubai's first forest-living community by Majid Al Futtaim, aims to become a premier destination in the UAE. Designed by renowned architects, it offers exclusive 1, 2, and 3-bedroom apartments and duplexes, spread across five to six floors, seamlessly blending sustainability with luxury.
+              </p>
+              <a href="#register" class="inline-block border border-white/60 hover:border-white bg-white/10 hover:bg-white/20 text-white text-sm font-semibold tracking-wide px-8 py-3 rounded-full transition-all duration-200 backdrop-blur-sm">
+                Register Now
+              </a>
+            </div>
+
+            <div class="relative">
+              <div class="rounded-2xl p-1 bg-white/20 backdrop-blur-sm shadow-2xl overflow-hidden border border-white/30">
+                <img src="/src/assets/image1.png" alt="Ghaf Woods Terrace View" class="w-full h-[380px] md:h-[440px] object-cover rounded-xl" style="object-position: 88% center;" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- INFO BAR -->
+        <section class="relative text-white py-5 md:py-6 bg-cover bg-center border-t border-b border-white/20" style="background-color: #7d8f67; background-image: url('/src/assets/background.png'); background-repeat: repeat; background-position: center;">
+          <div class="max-w-8xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-y md:divide-y-0 lg:divide-x divide-white/25">
+              <div class="flex flex-col items-center justify-center py-2 px-2 text-center">
+                <div class="text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-semibold text-white tracking-wide mb-0.5 leading-tight" style="font-family: 'Cormorant Garamond', serif;">7</div>
+                <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-white/90 font-semibold mt-0.5">FOREST CLUSTERS</p>
+              </div>
+              <div class="flex flex-col items-center justify-center py-2 px-2 text-center">
+                <div class="text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-semibold text-white tracking-wide mb-0.5 leading-tight" style="font-family: 'Cormorant Garamond', serif;">
+                  40,000+
+                  <span class="block text-lg sm:text-xl font-normal leading-tight">Trees</span>
+                </div>
+                <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-white/90 font-semibold mt-0.5">TREES PLANTED</p>
+              </div>
+              <div class="flex flex-col items-center justify-center py-2 px-2 text-center">
+                <div class="text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-semibold text-white tracking-wide mb-0.5 leading-tight" style="font-family: 'Cormorant Garamond', serif;">Dubailand</div>
+                <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-white/90 font-semibold mt-0.5">LOCATION</p>
+              </div>
+              <div class="flex flex-col items-center justify-center py-2 px-2 text-center">
+                <div class="text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-semibold text-white tracking-wide mb-0.5 leading-tight" style="font-family: 'Cormorant Garamond', serif;">1–3 BR</div>
+                <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-white/90 font-semibold mt-0.5">APARTMENTS</p>
+              </div>
+              <div class="flex flex-col items-center justify-center py-2 px-2 text-center">
+                <div class="text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-semibold text-white tracking-wide mb-0.5 leading-tight" style="font-family: 'Cormorant Garamond', serif;">AED 1.5M</div>
+                <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-white/90 font-semibold mt-0.5">STARTING PRICE</p>
+              </div>
+              <div class="flex flex-col items-center justify-center py-2 px-2 text-center">
+                <div class="text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-semibold text-white tracking-wide mb-0.5 leading-tight" style="font-family: 'Cormorant Garamond', serif;">10%</div>
+                <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-white/90 font-semibold mt-0.5">BOOKING</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BEDROOM TIERS -->
+        <section class="bg-cream py-16 md:py-20">
+          <div class="max-w-8xl mx-auto px-6 lg:px-12">
+            <div class="grid sm:grid-cols-3 gap-6 lg:gap-8 mb-10">
+              <div class="bg-white rounded-2xl p-8 md:p-12 text-center shadow-md border border-gray-100/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-center items-center min-h-[160px] md:min-h-[180px]">
+                <h3 class="font-display text-3xl md:text-4xl lg:text-3xl font-bold text-black">1 Bedroom</h3>
+              </div>
+              <div class="bg-white rounded-2xl p-8 md:p-12 text-center shadow-md border border-gray-100/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-center items-center min-h-[160px] md:min-h-[180px]">
+                <h3 class="font-display text-3xl md:text-4xl lg:text-3xl font-bold text-black">2 Bedroom</h3>
+              </div>
+              <div class="bg-white rounded-2xl p-8 md:p-12 text-center shadow-md border border-gray-100/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-center items-center min-h-[160px] md:min-h-[180px]">
+                <h3 class="font-display text-3xl md:text-4xl lg:text-3xl font-bold text-black">3 Bedroom</h3>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <a href="#register" class="inline-block bg-[#7d8f67] hover:bg-[#6b7d56] text-white text-sm md:text-base font-medium px-8 py-3.5 rounded-xl shadow-sm transition-colors duration-200">
+                Unit &amp; Price Availability
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT / LUXURY SECTION -->
+        <section id="about-us" class="bg-cream py-16 md:py-24 overflow-hidden">
+          <div class="max-w-8xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
+            <div class="grid grid-cols-2 gap-4 h-[380px] md:h-[440px] lg:h-[480px]">
+              <div class="grid grid-rows-2 gap-4 h-full">
+                <div class="overflow-hidden rounded-2xl md:rounded-3xl shadow-sm">
+                  <img src="/src/assets/about_1.png" alt="Ghaf Woods Forest Driveway" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="overflow-hidden rounded-2xl md:rounded-3xl shadow-sm">
+                  <img src="/src/assets/about_2.png" alt="Ghaf Woods Outdoor Terrace Dining" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+              </div>
+              <div class="h-full overflow-hidden rounded-2xl md:rounded-3xl shadow-sm">
+                <img src="/src/assets/about_3.png" alt="Ghaf Woods Cycling Path" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-center">
+              <div>
+                <span class="inline-block bg-[#4d5e38] text-white text-xs md:text-sm font-semibold uppercase tracking-wider px-4 py-1.5 rounded-lg mb-5">
+                  GHAF WOODS DUBAI
+                </span>
+              </div>
+              <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-5 leading-[1.2]">
+                Where Luxury<br />Blends with Nature
+              </h2>
+              <p class="font-sans text-gray-700 text-sm md:text-base leading-relaxed mb-4">
+                Located in one of Dubai's most desirable communities, Ghaf Woods reimagines luxury living by merging it with sustainability. In the neighborhood of some of the city's most attractive tourist destinations, Ghaf Woods aims to blend urban comfort with the bliss of nature. With the goal to become one of Dubai's top 10 must-visit destinations, Ghaf Woods is set to offer a distinctive lifestyle to its residents.
+              </p>
+              <p class="font-sans text-gray-700 text-sm md:text-base leading-relaxed mb-8">
+                What makes Ghaf Woods standout is its commitment to environmental sustainability. Strategically designed, this forest community not only maintains temperatures up to 5°C cooler than surrounding areas but also offers a 20% purer air quality. Offering wellness-focused benefits, and a sustainable lifestyle, Ghaf Woods is the perfect residence for those planning a healthier tomorrow.
+              </p>
+              <div>
+                <a href="#register" class="inline-block bg-[#788863] hover:bg-[#677753] text-white text-sm md:text-base font-medium px-8 py-3.5 rounded-xl shadow-sm transition-colors duration-200">
+                  Download Brochure
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- AMENITIES -->
+        <section class="bg-[#7d8f67] py-16 md:py-24 text-white">
+          <div class="max-w-8xl mx-auto px-6 lg:px-12 text-center">
+            <div>
+              <span class="inline-block bg-white text-black font-semibold text-xs md:text-sm uppercase tracking-wider px-5 py-2 rounded-lg mb-6 shadow-sm">
+                GHAF WOODS DUBAI AMENITIES
+              </span>
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+              Urban Lifestyle, Forest Living
+            </h2>
+            <p class="font-sans text-sm md:text-base leading-relaxed text-white/95 max-w-4xl mx-auto mb-12 lg:mb-16 font-normal">
+              Rediscover luxury, embraced within the bliss of nature, only at Ghaf Woods by Majid Al Futtaim. The impeccably designed residences create a refined ambiance with marble flooring, wooden accents, and ample natural light. Well-equipped with modern amenities like gyms, dining and cafes, retail outlets, BBQ areas, and spa, the community also features nature trails, and mountain biking trails, all designed for a balanced lifestyle. Ghaf Woods creates a tranquil haven, one that promotes your connection to nature.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 text-left">
+              <div class="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl h-[340px] sm:h-[420px] md:h-[480px] group">
+                <img src="/src/assets/rec_1.png" alt="Fitness Retreats" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-6 md:p-8">
+                  <h3 class="font-display text-xl md:text-2xl font-bold text-white mb-2">Fitness Retreats</h3>
+                  <p class="font-sans text-xs md:text-sm text-white/90 leading-snug">Dedicated natural spaces for yoga and meditation</p>
+                </div>
+              </div>
+              <div class="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl h-[340px] sm:h-[420px] md:h-[480px] group">
+                <img src="/src/assets/rec_2.png" alt="Forest Edge Oasis Pool" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-6 md:p-8">
+                  <h3 class="font-display text-xl md:text-2xl font-bold text-white mb-2">Forest Edge Oasis Pool</h3>
+                  <p class="font-sans text-xs md:text-sm text-white/90 leading-snug">Relax by the forest edge pool with views of the lush landscapes</p>
+                </div>
+              </div>
+              <div class="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl h-[340px] sm:h-[420px] md:h-[480px] group">
+                <img src="/src/assets/rec_3.png" alt="For Adventure Enthusiasts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-6 md:p-8">
+                  <h3 class="font-display text-xl md:text-2xl font-bold text-white mb-2">For Adventure Enthusiasts</h3>
+                  <p class="font-sans text-xs md:text-sm text-white/90 leading-snug">Promoting an active lifestyle with mountain biking trails and running tracks</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-12 md:mt-16 text-center">
+              <a href="#register" class="inline-block border-2 border-white text-white hover:bg-white hover:text-[#7d8f67] text-sm md:text-base font-semibold tracking-wide px-8 py-3.5 rounded-xl shadow-md transition-all duration-200">
+                Download Brochure
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROPERTIES GRID -->
+        <section id="properties" class="bg-cream py-16 md:py-24">
+          <div class="max-w-8xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-12">
+              <div>
+                <span class="inline-block bg-[#e0c458] text-black font-semibold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-md mb-3 shadow-xs">LATEST PROPERTIES</span>
+                <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black">New Ghaf Wood Projects by MAF</h2>
+              </div>
+              <div>
+                <a href="#register" class="inline-block bg-[#788863] hover:bg-[#677753] text-white text-sm font-medium px-7 py-3 rounded-xl shadow-sm transition-colors duration-200">Download Brochure</a>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              <!-- Property 1 -->
+              <div class="bg-white rounded-3xl p-5 md:p-6 border border-gray-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full">
+                <div>
+                  <div class="rounded-2xl overflow-hidden mb-4 h-[200px] md:h-[220px]">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Distrikt at Ghaf Woods" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <h3 class="font-sans font-bold text-lg md:text-xl text-black mb-1">Distrikt at Ghaf Woods</h3>
+                  <p class="text-xs text-gray-500 font-medium flex items-center gap-1 mb-3">
+                    <svg class="w-3.5 h-3.5 text-gray-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
+                    Dubailand, Dubai
+                  </p>
+                  <p class="text-xs text-gray-500 leading-relaxed mb-6 font-sans">New Majid AL Futtaim has newly launched a new district at Ghaf Woods, situated in the heart of Dubai's nature. It offers a serene living experience with 2-3 living bedroom apartments</p>
+                </div>
+                <div>
+                  <div class="border-t border-gray-200 pt-3 pb-3 mb-4 text-center">
+                    <p class="text-xs font-semibold text-gray-700 tracking-wide font-sans">Bedroom 1-3   |   Apartments</p>
+                  </div>
+                  <a href="#register" class="block w-full py-2.5 text-center rounded-full border border-black text-black font-semibold text-xs md:text-sm hover:bg-black hover:text-white transition-colors duration-200">Price &amp; Payment Plan</a>
+                </div>
+              </div>
+
+              <!-- Property 2 -->
+              <div class="bg-white rounded-3xl p-5 md:p-6 border border-gray-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full">
+                <div>
+                  <div class="rounded-2xl overflow-hidden mb-4 h-[200px] md:h-[220px]">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Capria at Ghaf Woods" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <h3 class="font-sans font-bold text-lg md:text-xl text-black mb-1">Capria at Ghaf Woods</h3>
+                  <p class="text-xs text-gray-500 font-medium flex items-center gap-1 mb-3">
+                    <svg class="w-3.5 h-3.5 text-gray-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
+                    Dubailand, Dubai
+                  </p>
+                  <p class="text-xs text-gray-500 leading-relaxed mb-6 font-sans">Capria at Ghaf Woods offers luxurious 1, 2, and 3-bedroom apartments in Ghafwoods, Dubai. Starting at AED 1.5M, enjoy modern living with world-class amenities in a prime location.</p>
+                </div>
+                <div>
+                  <div class="border-t border-gray-200 pt-3 pb-3 mb-4 text-center">
+                    <p class="text-xs font-semibold text-gray-700 tracking-wide font-sans">Bedroom 1-3   |   Apartments</p>
+                  </div>
+                  <a href="#register" class="block w-full py-2.5 text-center rounded-full border border-black text-black font-semibold text-xs md:text-sm hover:bg-black hover:text-white transition-colors duration-200">Price &amp; Payment Plan</a>
+                </div>
+              </div>
+
+              <!-- Property 3 -->
+              <div class="bg-white rounded-3xl p-5 md:p-6 border border-gray-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full">
+                <div>
+                  <div class="rounded-2xl overflow-hidden mb-4 h-[200px] md:h-[220px]">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Serra at Ghaf Woods" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <h3 class="font-sans font-bold text-lg md:text-xl text-black mb-1">Serra at Ghaf Woods</h3>
+                  <p class="text-xs text-gray-500 font-medium flex items-center gap-1 mb-3">
+                    <svg class="w-3.5 h-3.5 text-gray-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
+                    Dubailand, Dubai
+                  </p>
+                  <p class="text-xs text-gray-500 leading-relaxed mb-6 font-sans">SERRA at Ghaf Woods, by Majid ul Futtaim: first-of-a-kind luxury apartments and duplex penthouses with resort-style amenities. The community is set to become one of the city's top destinations.</p>
+                </div>
+                <div>
+                  <div class="border-t border-gray-200 pt-3 pb-3 mb-4 text-center">
+                    <p class="text-xs font-semibold text-gray-700 tracking-wide font-sans">Bedroom 1-3   |   Apartments</p>
+                  </div>
+                  <a href="#register" class="block w-full py-2.5 text-center rounded-full border border-black text-black font-semibold text-xs md:text-sm hover:bg-black hover:text-white transition-colors duration-200">Price &amp; Payment Plan</a>
+                </div>
+              </div>
+
+              <!-- Property 4 -->
+              <div class="bg-white rounded-3xl p-5 md:p-6 border border-gray-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full">
+                <div>
+                  <div class="rounded-2xl overflow-hidden mb-4 h-[200px] md:h-[220px]">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Lacina at Ghaf Woods Phase 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <h3 class="font-sans font-bold text-lg md:text-xl text-black mb-1">Lacina at Ghaf Woods Phase 2</h3>
+                  <p class="text-xs text-gray-500 font-medium flex items-center gap-1 mb-3">
+                    <svg class="w-3.5 h-3.5 text-gray-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
+                    Dubailand, Dubai
+                  </p>
+                  <p class="text-xs text-gray-500 leading-relaxed mb-6 font-sans">New launch Ghaf Woods phase 2 at forest living phase 2, by Majid ul Futtaim: first-of-a-kind luxury apartments and duplex penthouses with resort-style amenities.</p>
+                </div>
+                <div>
+                  <div class="border-t border-gray-200 pt-3 pb-3 mb-4 text-center">
+                    <p class="text-xs font-semibold text-gray-700 tracking-wide font-sans">Bedroom 1-3   |   Apartments   |   Penthouses</p>
+                  </div>
+                  <a href="#register" class="block w-full py-2.5 text-center rounded-full border border-black text-black font-semibold text-xs md:text-sm hover:bg-black hover:text-white transition-colors duration-200">Price &amp; Payment Plan</a>
+                </div>
+              </div>
+
+              <!-- Property 5 -->
+              <div class="bg-white rounded-3xl p-5 md:p-6 border border-gray-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full">
+                <div>
+                  <div class="rounded-2xl overflow-hidden mb-4 h-[200px] md:h-[220px]">
+                    <img src="/src/assets/maravelle.jpg" alt="Maravelle at Ghaf Woods" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <h3 class="font-sans font-bold text-lg md:text-xl text-black mb-1">Maravelle at Ghaf Woods</h3>
+                  <p class="text-xs text-gray-500 font-medium flex items-center gap-1 mb-3">
+                    <svg class="w-3.5 h-3.5 text-gray-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
+                    Dubailand, Dubai
+                  </p>
+                  <p class="text-xs text-gray-500 leading-relaxed mb-6 font-sans">Majid Al Futtaim has launched Maravelle Residences at Ghaf Woods, located in the heart of Dubai's nature. It offers a peaceful living experience with luxury 2, 3, and 4-bedroom forest-facing apartments.</p>
+                </div>
+                <div>
+                  <div class="border-t border-gray-200 pt-3 pb-3 mb-4 text-center">
+                    <p class="text-xs font-semibold text-gray-700 tracking-wide font-sans">Bedroom 2 - 4   |   Apartments</p>
+                  </div>
+                  <a href="#register" class="block w-full py-2.5 text-center rounded-full border border-black text-black font-semibold text-xs md:text-sm hover:bg-black hover:text-white transition-colors duration-200">Price &amp; Payment Plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FLOOR PLANS -->
+        <section id="floor-plans" class="bg-white py-16 md:py-24">
+          <div class="max-w-8xl mx-auto px-6 lg:px-12 text-center">
+            <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">Ghaf Woods Floor Plans</h2>
+            <p class="font-sans text-base md:text-lg text-gray-800 mb-8">Select Number Of Bedrooms Forest Living</p>
+
+            <div class="flex justify-center items-center gap-4 md:gap-8 mb-12">
+              <button data-plan="1 Br" class="floorplan-tab px-7 py-2 text-sm font-semibold rounded-md transition-all duration-200 border-2 border-black text-black bg-white shadow-xs">1 Br</button>
+              <button data-plan="2 Br" class="floorplan-tab px-7 py-2 text-sm font-semibold rounded-md transition-all duration-200 border-2 border-transparent text-gray-400 hover:text-black">2 Br</button>
+              <button data-plan="3 Br" class="floorplan-tab px-7 py-2 text-sm font-semibold rounded-md transition-all duration-200 border-2 border-transparent text-gray-400 hover:text-black">3 Br</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center text-left max-w-5xl mx-auto">
+              <div class="bg-[#f5f4ef] rounded-3xl p-4 border border-gray-200 shadow-xl overflow-hidden relative group">
+                <img id="floorplan-img" src="/src/assets/floorplan_sketch.svg" alt="1-BEDROOM 2D floor plan sketch" class="w-full h-[320px] md:h-[380px] object-contain rounded-2xl filter blur-[7px] md:blur-[8px] scale-105 select-none pointer-events-none transition-all duration-300" />
+              </div>
+
+              <div>
+                <h3 id="floorplan-title" class="font-display text-4xl md:text-5xl lg:text-4xl font-normal text-black mb-5 tracking-tight">1-BEDROOM</h3>
+                <p id="floorplan-size" class="font-sans text-2xl md:text-3xl text-gray-900 font-bold mb-3 tracking-tight">829 – 899 Sqft</p>
+                <p id="floorplan-price" class="font-sans text-xl md:text-2xl text-gray-900 font-medium mb-8">Starting Price: 1.5M</p>
+                <a href="#register" class="inline-block bg-[#788863] hover:bg-[#677753] text-white text-sm md:text-base font-medium px-8 py-3.5 rounded-xl shadow-sm transition-colors duration-200">Download Payment Plan</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery" class="bg-[#7d8f67] py-16 md:py-24 text-white">
+          <div class="max-w-8xl mx-auto px-6 lg:px-12 text-center">
+            <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">Gallery</h2>
+            <p class="font-sans text-sm md:text-base text-white/95 max-w-3xl mx-auto mb-12 lg:mb-16 font-normal">Redefine urban living surrounded by lush landscapes only at Ghaf Woods</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 lg:gap-6 max-w-7xl mx-auto">
+              <div class="col-span-1 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg h-[220px] sm:h-[260px] md:h-[290px]">
+                <img src="/src/assets/image_2.png" alt="Ghaf Woods Gallery 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="col-span-1 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg h-[220px] sm:h-[260px] md:h-[290px]">
+                <img src="/src/assets/image-3.png" alt="Ghaf Woods Gallery 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="col-span-1 sm:col-span-2 md:col-span-2 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg h-[220px] sm:h-[260px] md:h-[290px]">
+                <img src="/src/assets/image_4.png" alt="Ghaf Woods Gallery 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="col-span-1 sm:col-span-2 md:col-span-2 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg h-[220px] sm:h-[260px] md:h-[290px]">
+                <img src="/src/assets/image_5.png" alt="Ghaf Woods Gallery 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="col-span-1 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg h-[220px] sm:h-[260px] md:h-[290px]">
+                <img src="/src/assets/image_6.png" alt="Ghaf Woods Gallery 6" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="col-span-1 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg h-[220px] sm:h-[260px] md:h-[290px]">
+                <img src="/src/assets/image-7.png" alt="Ghaf Woods Gallery 7" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+            </div>
+
+            <div class="mt-12 md:mt-16 text-center">
+              <a href="#register" class="inline-block bg-white text-[#7d8f67] hover:bg-white/90 font-medium text-sm md:text-base px-8 py-3.5 rounded-xl shadow-md transition-all duration-200">Download Brochure</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAYMENT PLAN SECTION -->
+        <section id="payment-plan" class="bg-white py-16 md:py-24">
+          <div class="max-w-8xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="rounded-3xl overflow-hidden shadow-xl">
+              <img src="/src/assets/about_2.png" alt="Ghaf Woods Outdoor Dining Terrace" class="w-full h-[400px] md:h-[480px] object-cover" />
+            </div>
+
+            <div>
+              <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 leading-tight max-w-xl">
+                Ghaf Woods by Majid Al Futtaim Payment Plan
+              </h2>
+              <p class="font-sans text-sm md:text-base text-gray-700 leading-relaxed mb-4">
+                Ghaf Woods offers a diverse range of properties designed to cater to different lifestyles.
+              </p>
+              <p class="font-sans text-sm md:text-base text-gray-700 leading-relaxed mb-8">
+                With an attractive payment plan in place, purchasing your dream home will be a hassle-free experience.
+              </p>
+
+              <div class="flex items-center gap-12 md:gap-16 mb-8">
+                <div>
+                  <p class="font-display text-4xl md:text-5xl font-bold text-black mb-1">60/40</p>
+                  <p class="font-sans text-xs md:text-sm font-medium text-gray-600">Payment Plan</p>
+                </div>
+                <div>
+                  <p class="font-display text-4xl md:text-5xl font-bold text-black mb-1">10%</p>
+                  <p class="font-sans text-xs md:text-sm font-medium text-gray-600">Down Payment</p>
+                </div>
+              </div>
+
+              <a href="#register" class="inline-block bg-[#788863] hover:bg-[#677753] text-white text-sm md:text-base font-medium px-8 py-3.5 rounded-xl shadow-sm transition-colors duration-200">
+                Download Brochure
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- LOCATION SECTION -->
+        <section id="location" class="bg-forest-900 py-20">
+          <div class="max-w-8xl mx-auto px-6 lg:px-12 text-center">
+            <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">Ghaf Woods Location</h2>
+            <p class="text-forest-100/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+              Located in Dubailand, Ghaf Woods offers a quick escape into a lush forest living while being conveniently connected to key attractions like Global Village and other major hubs.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm md:text-base text-forest-100/90 max-w-4xl mx-auto">
+              <span class="flex items-center gap-2 bg-white/10 px-5 py-2.5 rounded-xl backdrop-blur-xs border border-white/10">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-4 h-4 text-white"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
+                03 Minutes – Global Village
+              </span>
+              <span class="flex items-center gap-2 bg-white/10 px-5 py-2.5 rounded-xl backdrop-blur-xs border border-white/10">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-4 h-4 text-white"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
+                10 Minutes – Dubai Miracle Garden
+              </span>
+              <span class="flex items-center gap-2 bg-white/10 px-5 py-2.5 rounded-xl backdrop-blur-xs border border-white/10">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-4 h-4 text-white"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
+                15 Minutes – Tilal Al Ghaf
+              </span>
+              <span class="flex items-center gap-2 bg-white/10 px-5 py-2.5 rounded-xl backdrop-blur-xs border border-white/10">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-4 h-4 text-white"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
+                24 Minutes – Mall Of Emirates
+              </span>
+              <span class="flex items-center gap-2 bg-white/10 px-5 py-2.5 rounded-xl backdrop-blur-xs border border-white/10">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-4 h-4 text-white"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
+                30 Minutes – Downtown Dubai
+              </span>
+              <span class="flex items-center gap-2 bg-white/10 px-5 py-2.5 rounded-xl backdrop-blur-xs border border-white/10">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-4 h-4 text-white"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
+                30 Minutes – Dubai Int'l Airport
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTENT SECTION -->
+        <section class="bg-white py-20">
+          <div class="max-w-4xl mx-auto px-6">
+            <div class="space-y-8">
+              <div>
+                <h2 class="font-display text-xl md:text-2xl text-[#6b7d56] mb-3 uppercase tracking-wider font-semibold">Ghaf Woods by MAF</h2>
+                <p class="text-gray-600 leading-relaxed text-sm md:text-base">Global Village is next to Ghaf Woods by MAF. Considered an ecologically conscious development, Ghaf Woods development is recognized as the first forest living area in Dubai. The Ghaf Woods location gives people a distinctive living experience in the center of a lush forest with a focus on environmental sustainability.</p>
+              </div>
+              <div>
+                <h2 class="font-display text-xl md:text-2xl text-[#6b7d56] mb-3 uppercase tracking-wider font-semibold">Off Plan Projects In Ghaf Woods</h2>
+                <p class="text-gray-600 leading-relaxed text-sm md:text-base">Ghaf Woods Properties is a premier residential community blending nature with modern living. This development features luxury off-plan properties with sustainable design and class amenities.</p>
+              </div>
+              <div>
+                <h2 class="font-display text-xl md:text-2xl text-[#6b7d56] mb-3 uppercase tracking-wider font-semibold">Maravelle at Ghaf Woods</h2>
+                <p class="text-gray-600 leading-relaxed text-sm md:text-base">Maravelle Residences at Ghaf Woods is a new residential development by Majid Al Futtaim in Dubailand, Dubai. Surrounded by lush greenery, the community offers a peaceful forest-inspired lifestyle with modern 2, 3, and 4-bedroom apartments.</p>
+              </div>
+            </div>
+
+            <p class="text-center text-forest-700 font-medium mt-10">
+              Coming soon new Ghaf Woods phase 2 at forest living phase 2 launching soon by Majid Al Futtaim
+            </p>
+          </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section id="faqs" class="bg-white py-16 md:py-20 border-t border-sand/60">
+          <div class="max-w-4xl mx-auto px-6">
+            <div class="mb-10 text-center">
+              <span class="inline-block bg-[#e0c458] text-black font-semibold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-md mb-3 shadow-xs">
+                FREQUENTLY ASKED QUESTIONS
+              </span>
+              <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+              <!-- FAQ Item 1 -->
+              <div class="faq-item bg-white rounded-2xl border border-gray-200/80 overflow-hidden transition-all duration-200 shadow-xs">
+                <button type="button" class="faq-toggle-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-semibold text-base md:text-lg text-[#6B7D56] hover:text-[#586847] transition-colors" aria-expanded="true">
+                  <span>1. What is Ghaf Woods in Dubai?</span>
+                  <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#6B7D56] font-bold text-base">−</span>
+                </button>
+                <div class="faq-content px-6 pb-6 pt-1 text-gray-600 text-sm md:text-base leading-relaxed border-t border-gray-100 font-sans">
+                  Ghaf Woods is a forest-inspired residential community in Dubai developed by Majid Al Futtaim. It is designed around greenery, nature, wellness, and modern living, offering apartments surrounded by landscaped spaces and woodland-inspired environments.
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="faq-item bg-white rounded-2xl border border-gray-200/80 overflow-hidden transition-all duration-200 shadow-xs">
+                <button type="button" class="faq-toggle-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-semibold text-base md:text-lg text-[#6B7D56] hover:text-[#586847] transition-colors" aria-expanded="false">
+                  <span>2. Where is Ghaf Woods located in Dubai?</span>
+                  <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#6B7D56] font-bold text-base">+</span>
+                </button>
+                <div class="faq-content hidden px-6 pb-6 pt-1 text-gray-600 text-sm md:text-base leading-relaxed border-t border-gray-100 font-sans">
+                  Ghaf Woods is located in Dubailand, Dubai. The community offers access to major roads and key areas of the city, making it convenient for residents to reach different parts of Dubai.
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item bg-white rounded-2xl border border-gray-200/80 overflow-hidden transition-all duration-200 shadow-xs">
+                <button type="button" class="faq-toggle-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-semibold text-base md:text-lg text-[#6B7D56] hover:text-[#586847] transition-colors" aria-expanded="false">
+                  <span>3. Who is the developer of Ghaf Woods Dubai?</span>
+                  <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#6B7D56] font-bold text-base">+</span>
+                </button>
+                <div class="faq-content hidden px-6 pb-6 pt-1 text-gray-600 text-sm md:text-base leading-relaxed border-t border-gray-100 font-sans">
+                  Ghaf Woods is developed by Majid Al Futtaim, a major developer known for residential, retail, and lifestyle projects across the region.
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="faq-item bg-white rounded-2xl border border-gray-200/80 overflow-hidden transition-all duration-200 shadow-xs">
+                <button type="button" class="faq-toggle-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-semibold text-base md:text-lg text-[#6B7D56] hover:text-[#586847] transition-colors" aria-expanded="false">
+                  <span>4. What types of properties are available in Ghaf Woods?</span>
+                  <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#6B7D56] font-bold text-base">+</span>
+                </button>
+                <div class="faq-content hidden px-6 pb-6 pt-1 text-gray-600 text-sm md:text-base leading-relaxed border-t border-gray-100 font-sans">
+                  Ghaf Woods offers modern apartments, including different layouts designed for individuals, couples, and families. Specific property types and configurations vary by residential project within the community.
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="faq-item bg-white rounded-2xl border border-gray-200/80 overflow-hidden transition-all duration-200 shadow-xs">
+                <button type="button" class="faq-toggle-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-semibold text-base md:text-lg text-[#6B7D56] hover:text-[#586847] transition-colors" aria-expanded="false">
+                  <span>5. What is the starting price of properties in Ghaf Woods Dubai?</span>
+                  <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#6B7D56] font-bold text-base">+</span>
+                </button>
+                <div class="faq-content hidden px-6 pb-6 pt-1 text-gray-600 text-sm md:text-base leading-relaxed border-t border-gray-100 font-sans">
+                  Property prices in Ghaf Woods vary depending on the project, apartment type, size, and location within the community. Buyers should check the latest available listings for current starting prices.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- REGISTER FORM SECTION -->
+        <section id="register" class="bg-cream py-20">
+          <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 bg-white rounded-2xl shadow-lg overflow-hidden min-h-[480px]">
+            <div class="p-10">
+              <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-forest-900 mb-2">Register Your Interest</h2>
+              <p class="text-forest-600 mb-6">Fill the forms and we will get back to you as soon as possible.</p>
+
+              <div id="success-container" class="hidden p-4 bg-emerald-50 border border-emerald-200 rounded-lg">
+                <p class="text-emerald-800 font-medium text-lg mb-1">Thank you!</p>
+                <p class="text-emerald-700 text-sm">Your request has been received. Our team will contact you shortly.</p>
+              </div>
+
+              <form id="registration-form" class="space-y-4">
+                <div id="form-container" class="space-y-4">
+                  <div>
+                    <label for="name-input" class="text-xs text-forest-600 mb-1 block">Full Name</label>
+                    <input id="name-input" type="text" name="name" required placeholder="Full Name" class="w-full border border-sand rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-forest-500" />
+                  </div>
+                  <div>
+                    <label for="email-input" class="text-xs text-forest-600 mb-1 block">Email</label>
+                    <input id="email-input" type="email" name="email" required placeholder="Email Address" class="w-full border border-sand rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-forest-500" />
+                  </div>
+                  <div>
+                    <label for="phone-input" class="text-xs text-forest-600 mb-1 block">Phone</label>
+                    <div class="phone-input-wrapper">
+                      <div class="PhoneInputCountry">
+                        <select id="country-code-select" class="PhoneInputCountrySelect" aria-label="Select Country Code">
+                          <option value="AE">AE (+971)</option>
+                          <option value="US">US (+1)</option>
+                          <option value="GB">UK (+44)</option>
+                          <option value="SA">SA (+966)</option>
+                          <option value="IN">IN (+91)</option>
+                          <option value="QA">QA (+974)</option>
+                          <option value="KW">KW (+965)</option>
+                          <option value="OM">OM (+968)</option>
+                          <option value="BH">BH (+973)</option>
+                          <option value="RU">RU (+7)</option>
+                          <option value="CN">CN (+86)</option>
+                          <option value="DE">DE (+49)</option>
+                          <option value="FR">FR (+33)</option>
+                        </select>
+                      </div>
+                      <input id="phone-input" type="tel" name="phone" required placeholder="Phone Number" class="PhoneInputInput" />
+                    </div>
+                  </div>
+                  <button id="form-submit-btn" type="submit" class="btn-primary w-full text-center cursor-pointer">Submit</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="hidden md:block h-full min-h-[480px] self-stretch">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Ghaf Woods evening exterior" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="relative bg-[#2B3D22] text-[#e3ded5] overflow-hidden select-none w-full">
+        <div class="w-full bg-[#2B3D22] text-[#e3ded5] py-12 sm:py-16 px-6 sm:px-12 lg:px-20 relative z-10 shadow-2xl">
+          <div class="max-w-7xl mx-auto relative z-30">
+            <div class="w-full text-center max-w-5xl mx-auto mb-10 md:mb-12">
+              <p class="text-xs sm:text-sm text-[#b8c9b2] leading-relaxed font-normal">
+                ForestLiving community operates as a proud subsidiary of MAF, we inform that all property information provided on this website is for general guidance only and not constitute a formal offer. Prices, availability, and property details may change at any time without prior notice. Images are for illustrative purposes only and reflect actual properties. For the most accurate and up-to-date information, please contact us directly through the details provided on the website.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+              <div class="lg:col-span-4 space-y-4">
+                <div>
+                  <img src="/src/assets/logo.svg" alt="Forest Living Logo" class="h-10 sm:h-12 w-auto brightness-0 invert" />
+                </div>
+                <div class="text-[11px] uppercase tracking-widest text-[#9cb095] pt-1 space-y-0.5">
+                  <p>© 2026 FORESTLIVING COMMUNITY.</p>
+                  <p>ALL RIGHTS RESERVED.</p>
+                </div>
+              </div>
+
+              <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
+                <div>
+                  <h3 class="text-xs font-extrabold uppercase tracking-widest text-[#e0c458] mb-4 border-b border-[#3e5433] pb-2">COMMUNITY PAGES</h3>
+                  <ul class="space-y-3 text-xs font-semibold uppercase tracking-wider text-[#dcd5c7]">
+                    <li><a href="/ghaf-woods-dubai-price-and-payment-plan" class="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block">GHAF WOODS DUBAI PRICE AND PAYMENT PLAN</a></li>
+                    <li><a href="/full-forest-view-in-ghaf-woods-dubai" class="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block">FULL FOREST VIEW IN GHAF WOODS DUBAI</a></li>
+                    <li><a href="/forest-and-park-view-in-ghaf-woods-dubai" class="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block">FOREST AND PARK VIEW IN GHAF WOODS DUBAI</a></li>
+                    <li><a href="/investor-deal-ghaf-woods" class="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block">INVESTOR DEAL GHAF WOODS</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="text-xs font-extrabold uppercase tracking-widest text-[#e0c458] mb-4 border-b border-[#3e5433] pb-2">GHAF WOODS LISTINGS</h3>
+                  <ul class="space-y-3 text-xs font-semibold uppercase tracking-wider text-[#dcd5c7]">
+                    <li><a href="/off-plan-properties-for-sale-in-ghaf-woods" class="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block">OFF-PLAN PROPERTIES FOR SALE IN GHAF WOODS</a></li>
+                    <li><a href="/apartments-for-sale-in-ghaf-woods" class="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block">APARTMENTS FOR SALE IN GHAF WOODS</a></li>
+                    <li><a href="/villas-for-sale-in-ghaf-woods" class="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block">VILLAS FOR SALE IN GHAF WOODS</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="text-xs font-extrabold uppercase tracking-widest text-[#e0c458] mb-4 border-b border-[#3e5433] pb-2">LEGAL &amp; INFORMATION</h3>
+                  <ul class="space-y-3 text-xs font-semibold uppercase tracking-wider text-[#dcd5c7]">
+                    <li><a href="/privacy-policy" class="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block">PRIVACY POLICY</a></li>
+                    <li><a href="/terms-and-conditions" class="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block">TERMS &amp; CONDITIONS</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

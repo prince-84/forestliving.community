@@ -161,7 +161,7 @@ export default function Footer() {
                 <ul className="space-y-3 text-xs font-semibold uppercase tracking-wider text-[#dcd5c7]">
                   <li>
                     <a
-                      href="/privacy-policy/"
+                      href="/privacy-policy"
                       className="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block"
                     >
                       PRIVACY POLICY
@@ -169,7 +169,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <a
-                      href="/terms-and-conditions/"
+                      href="/terms-and-conditions"
                       className="hover:text-[#ffffff] hover:translate-x-1 transition-all duration-200 block"
                     >
                       TERMS & CONDITIONS

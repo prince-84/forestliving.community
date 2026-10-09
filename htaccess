@@ -17,23 +17,34 @@ Options -Indexes
   RewriteCond %{HTTP:X-Forwarded-Proto} =http
   RewriteRule ^(.*)$ https://forestliving.community/$1 [R=301,L]
 
-  # 2. Redirect WWW and ALL Subdomains to Apex Domain
+  # 2. Redirect WWW and ALL Subdomains (admin, mail, cpanel, webmail, autodiscover, etc.) to Apex Domain
+  # This stops Google Search Console (GSC) from indexing subdomains as duplicate content
   RewriteCond %{HTTP_HOST} !^forestliving\.community$ [NC]
   RewriteRule ^(.*)$ https://forestliving.community/$1 [R=301,L]
 
   # 3. Strip Trailing Slash from URLs (e.g. /privacy-policy/ -> /privacy-policy)
+  # Excludes root domain "/" and POST requests
   RewriteCond %{REQUEST_METHOD} !POST
   RewriteCond %{REQUEST_URI} ^(.+[^/])/+$
   RewriteRule ^ https://forestliving.community%1 [R=301,L]
 
-  # 4. Handle Front Controller SPA / static Routing (fallback to index.html)
+  # 4. Serve existing .html subpages directly if available
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^([^/]+)$ $1.html [L]
+
+  # 5. Handle Front Controller SPA Routing (fallback to index.html for React / Vite)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]
 </IfModule>
 
-# Security & Anti-Sniffing Headers
+# Security & Crawler Directives
 <IfModule mod_headers.c>
+  # Tell Google Search Console and crawlers to NEVER index any subdomain
+  SetEnvIfNoCase Host "^(?!forestliving\.community$).*$" SUBDOMAIN=1
+  Header set X-Robots-Tag "noindex, nofollow" env=SUBDOMAIN
+
+  # Security & Anti-Sniffing Headers
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set X-XSS-Protection "1; mode=block"

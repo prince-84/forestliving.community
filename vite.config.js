@@ -1,45 +1,26 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import fs from 'fs';
 import path from 'path';
 
-function generateSubpageHtmlPlugin() {
-  return {
-    name: 'generate-subpage-html',
-    closeBundle() {
-      const distDir = path.resolve(__dirname, 'dist');
-      const indexHtmlPath = path.join(distDir, 'index.html');
-      if (!fs.existsSync(indexHtmlPath)) return;
-
-      const routes = [
-        'ghaf-woods-dubai-price-and-payment-plan',
-        'full-forest-view-in-ghaf-woods-dubai',
-        'forest-and-park-view-in-ghaf-woods-dubai',
-        'investor-deal-ghaf-woods',
-        'off-plan-properties-for-sale-in-ghaf-woods',
-        'apartments-for-sale-in-ghaf-woods',
-        'villas-for-sale-in-ghaf-woods',
-        'privacy-policy',
-        'terms-and-conditions'
-      ];
-
-      const content = fs.readFileSync(indexHtmlPath, 'utf-8');
-
-      routes.forEach((route) => {
-        const routeDir = path.join(distDir, route);
-        if (!fs.existsSync(routeDir)) {
-          fs.mkdirSync(routeDir, { recursive: true });
-        }
-        fs.writeFileSync(path.join(routeDir, 'index.html'), content);
-      });
-    }
-  };
-}
-
 export default defineConfig({
-  plugins: [react(), generateSubpageHtmlPlugin()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        pricePaymentPlan: path.resolve(__dirname, 'ghaf-woods-dubai-price-and-payment-plan/index.html'),
+        fullForestView: path.resolve(__dirname, 'full-forest-view-in-ghaf-woods-dubai/index.html'),
+        forestParkView: path.resolve(__dirname, 'forest-and-park-view-in-ghaf-woods-dubai/index.html'),
+        investorDeal: path.resolve(__dirname, 'investor-deal-ghaf-woods/index.html'),
+        offPlanProperties: path.resolve(__dirname, 'off-plan-properties-for-sale-in-ghaf-woods/index.html'),
+        apartmentsForSale: path.resolve(__dirname, 'apartments-for-sale-in-ghaf-woods/index.html'),
+        villasForSale: path.resolve(__dirname, 'villas-for-sale-in-ghaf-woods/index.html'),
+        privacyPolicy: path.resolve(__dirname, 'privacy-policy/index.html'),
+        termsAndConditions: path.resolve(__dirname, 'terms-and-conditions/index.html')
+      }
+    }
+  },
   server: {
     host: true,
     port: 5173
   }
 });
+

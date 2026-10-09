@@ -1,26 +1,36 @@
 # Apache .htaccess configuration for forestliving.community
 
+# Disable Directory Browsing
+Options -Indexes
+
+# Prevent Apache from automatically appending trailing slash to directories
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # 1. Block/Redirect ALL subdomains (e.g., www, staging, dev, random subdomains) to the primary apex domain
-  # Prevents unwanted subdomains from being indexed in Google Search Console (GSC)
+  # 1. Force HTTPS (Handles direct SSL, Cloudflare, Hostinger, and Nginx reverse proxies)
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP:X-Forwarded-Proto} =http
+  RewriteRule ^(.*)$ https://forestliving.community/$1 [R=301,L]
+
+  # 2. Redirect WWW and ALL Subdomains to Apex Domain
   RewriteCond %{HTTP_HOST} !^forestliving\.community$ [NC]
   RewriteRule ^(.*)$ https://forestliving.community/$1 [R=301,L]
 
-  # 2. Force HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://forestliving.community/$1 [R=301,L]
+  # 3. Strip Trailing Slash from URLs (e.g. /privacy-policy/ -> /privacy-policy)
+  RewriteCond %{REQUEST_METHOD} !POST
+  RewriteCond %{REQUEST_URI} ^(.+[^/])/+$
+  RewriteRule ^ https://forestliving.community%1 [R=301,L]
 
-  # 3. Handle Front Controller SPA Routing (fallback to index.html)
+  # 4. Handle Front Controller SPA / static Routing (fallback to index.html)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]
 </IfModule>
-
-# Disable Directory Browsing
-Options -Indexes
 
 # Security & Anti-Sniffing Headers
 <IfModule mod_headers.c>

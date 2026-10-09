@@ -55,7 +55,7 @@ export default function ApartmentsForSalePage({ onBack }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "Apartments for Sale in Ghaf Woods | Dubai Apartments";
-    setCanonicalUrl("https://forestliving.community/apartments-for-sale-in-ghaf-woods/");
+    setCanonicalUrl("https://forestliving.community/apartments-for-sale-in-ghaf-woods");
 
     let metaDesc = document.querySelector('meta[name="description"]');
     const prevDesc = metaDesc ? metaDesc.getAttribute("content") : "";

@@ -55,7 +55,7 @@ export default function VillasForSalePage({ onBack }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "Villas for Sale in Ghaf Woods | Luxury Villas in Dubai";
-    setCanonicalUrl("https://forestliving.community/villas-for-sale-in-ghaf-woods/");
+    setCanonicalUrl("https://forestliving.community/villas-for-sale-in-ghaf-woods");
 
     let metaDesc = document.querySelector('meta[name="description"]');
     const prevDesc = metaDesc ? metaDesc.getAttribute("content") : "";
@@ -357,7 +357,7 @@ export default function VillasForSalePage({ onBack }) {
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
                   If you are looking for villas for sale in Ghaf Woods, our team can help you explore available properties and compare suitable options. Along with villas, buyers can also explore{" "}
                   <a
-                    href="/apartments-for-sale-in-ghaf-woods/"
+                    href="/apartments-for-sale-in-ghaf-woods"
                     className="text-[#6b7d56] hover:underline font-semibold"
                   >
                     Apartments for Sale in Ghaf Woods

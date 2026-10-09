@@ -7,7 +7,7 @@ export default function TermsConditions({ onBack }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "Terms & Conditions";
-    setCanonicalUrl("https://forestliving.community/terms-and-conditions/");
+    setCanonicalUrl("https://forestliving.community/terms-and-conditions");
 
     let metaDesc = document.querySelector('meta[name="description"]');
     const prevDesc = metaDesc ? metaDesc.getAttribute("content") : "";

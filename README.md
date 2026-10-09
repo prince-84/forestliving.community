@@ -1,13 +1,13 @@
-# Ghaf Woods Landing Page & Sub-Pages — Vite + React + Tailwind CSS
+# Ghaf Woods Landing Page & Sub-Pages — Vanilla HTML + Vite + Tailwind CSS
 
-Forest Living (Majid Al Futtaim) Community Web Application built with Vite, React, and Tailwind CSS.
+Forest Living (Majid Al Futtaim) Community Web Application built with **Vanilla HTML5**, **Vite (Multi-Page Architecture)**, **Vanilla JS**, and **Tailwind CSS**.
 
 ---
 
 ## 🚀 Setup & Local Development
 
 1. Ensure **Node.js (v18+)** is installed.
-2. Clone the repository and run:
+2. Clone the repository and install dependencies:
 
 ```bash
 npm install
@@ -25,88 +25,72 @@ npm run build
 npm run preview
 ```
 
+Vite compiles 10 distinct standalone static HTML pages into the `dist/` directory, optimized for SEO and fast loading.
+
 ---
 
 ## 📁 Project Folder Structure
 
 ```
 ghaf-woods/
-├── index.html
-├── package.json
-├── tailwind.config.js
+├── index.html                                        # Main Homepage
+├── ghaf-woods-dubai-price-and-payment-plan/
+│   └── index.html                                    # Price & Payment Plan Page
+├── full-forest-view-in-ghaf-woods-dubai/
+│   └── index.html                                    # Full Forest View Page
+├── forest-and-park-view-in-ghaf-woods-dubai/
+│   └── index.html                                    # Forest & Park View Page
+├── investor-deal-ghaf-woods/
+│   └── index.html                                    # Investor Deal Page
+├── off-plan-properties-for-sale-in-ghaf-woods/
+│   └── index.html                                    # Off-Plan Properties Page
+├── apartments-for-sale-in-ghaf-woods/
+│   └── index.html                                    # Apartments for Sale Page
+├── villas-for-sale-in-ghaf-woods/
+│   └── index.html                                    # Villas for Sale Page
+├── privacy-policy/
+│   └── index.html                                    # Privacy Policy Page
+├── terms-and-conditions/
+│   └── index.html                                    # Terms & Conditions Page
+├── package.json                                      # Clean dependencies (Vite + Tailwind)
+├── tailwind.config.js                                # Forest brand color palette & fonts
 ├── postcss.config.js
-├── vite.config.js
-├── public/
-│   └── logo.svg
+├── vite.config.js                                    # Vite Multi-Page Rollup Input Config
 └── src/
-    ├── main.jsx
-    ├── App.jsx
-    ├── index.css
-    ├── data/
-    │   └── footerPages.js        # Data configuration for 7 sub-pages
-    └── components/
-        ├── Header.jsx            # Main navigation header
-        ├── Hero.jsx
-        ├── Properties.jsx        # Property showcase cards
-        ├── ContentSection.jsx    # Standard content block design
-        ├── FAQSection.jsx        # Homepage & Page FAQ accordion
-        ├── RegisterForm.jsx      # Webhook lead registration form
-        ├── Footer.jsx            # 3-column footer with leaf SVG overlays & official logo
-        ├── PricePaymentPlanPage.jsx # Page 1: Price and Payment Plan Page
-        └── DummyPage.jsx         # Generic fallback template for new sub-pages
+    ├── main.js                                       # Vanilla JS logic (Menu, Accordion, Form, Tabs)
+    ├── index.css                                     # Tailwind directives & styles
+    └── assets/                                       # SVG Logo, Icons, and Community Images
 ```
 
 ---
 
-## 📄 Standard Page Template Blueprint (For Pages 2–7)
+## 🌐 Site Routes & Multi-Page Architecture
 
-When providing content for any of the remaining 6 pages (Full Forest View, Forest and Park View, Investor Deal, Off-Plan Properties, Apartments for Sale, Villas for Sale), follow this exact **6-Section Standard Blueprint** to maintain 100% theme consistency:
-
-### 1. SEO Metadata Integration
-- **Title Tag**: Set dynamically via `document.title`.
-- **Meta Description**: Injected into `<meta name="description">`.
-- **Keywords**: Injected into `<meta name="keywords">`.
-
-### 2. Section 1 — Hero Section
-- **Breadcrumb**: `<a href="#" onClick={onBack}>Back to Home</a>`
-- **Badge**: `<span className="inline-block bg-[#e0c458] text-black font-semibold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-md mb-4">CATEGORY BADGE</span>`
-- **Title**: `<h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-forest-900 mb-6 max-w-5xl">`
-- **Subtitle**: `<p className="text-forest-700 text-base sm:text-lg md:text-xl leading-relaxed max-w-5xl">`
-
-### 3. Section 2 — Ghaf Woods Properties
-- Render `<Properties />` component inside `max-w-8xl mx-auto px-6 lg:px-12`.
-
-### 4. Section 3 — Data Table (Optional / Average Prices)
-- Render styled responsive table with `bg-forest-900` table header and alternating `bg-white` / `bg-cream/30` rows.
-
-### 5. Section 4 — Long Content Section
-- **Container**: `max-w-4xl mx-auto px-6`
-- **Section Sub-Headings**: Uppercase sage green font:
-  `<h2 className="font-display text-xl md:text-2xl text-[#6b7d56] mb-3 uppercase tracking-wider font-semibold">`
-- **Body Paragraphs**: Clean gray text:
-  `<p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4">`
-- **Links**: `<a href="https://forestliving.community/" className="text-[#6b7d56] hover:underline font-semibold">`
-
-### 6. Section 5 — Frequently Asked Questions (FAQ)
-- **Container**: `max-w-4xl mx-auto px-6`
-- **Card**: `bg-white rounded-2xl border border-gray-200/80 overflow-hidden transition-all duration-200 shadow-xs`
-- **Question Button**: `font-display font-semibold text-base md:text-lg text-[#6B7D56]`
-- **Toggle Icon**: Circular `+` / `−` badge `<span className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#6B7D56] font-bold">{isOpen ? "−" : "+"}</span>`
-- **Answer Body**: `px-6 pb-6 pt-1 text-gray-600 text-sm md:text-base leading-relaxed`
-
-### 7. Section 6 — Registration Form
-- Render `<RegisterForm />` at the bottom of the page.
+| Page Title | Route Path | Entry File |
+|---|---|---|
+| **Homepage** | `/` | `index.html` |
+| **Ghaf Woods Dubai Price & Payment Plan** | `/ghaf-woods-dubai-price-and-payment-plan/` | `ghaf-woods-dubai-price-and-payment-plan/index.html` |
+| **Full Forest View in Ghaf Woods Dubai** | `/full-forest-view-in-ghaf-woods-dubai/` | `full-forest-view-in-ghaf-woods-dubai/index.html` |
+| **Forest and Park View in Ghaf Woods Dubai** | `/forest-and-park-view-in-ghaf-woods-dubai/` | `forest-and-park-view-in-ghaf-woods-dubai/index.html` |
+| **Investor Deal Ghaf Woods** | `/investor-deal-ghaf-woods/` | `investor-deal-ghaf-woods/index.html` |
+| **Off-Plan Properties for Sale in Ghaf Woods** | `/off-plan-properties-for-sale-in-ghaf-woods/` | `off-plan-properties-for-sale-in-ghaf-woods/index.html` |
+| **Apartments for Sale in Ghaf Woods** | `/apartments-for-sale-in-ghaf-woods/` | `apartments-for-sale-in-ghaf-woods/index.html` |
+| **Villas for Sale in Ghaf Woods** | `/villas-for-sale-in-ghaf-woods/` | `villas-for-sale-in-ghaf-woods/index.html` |
+| **Privacy Policy** | `/privacy-policy/` | `privacy-policy/index.html` |
+| **Terms & Conditions** | `/terms-and-conditions/` | `terms-and-conditions/index.html` |
 
 ---
 
-## 🔗 List of 7 Sub-Pages & Hash Routes
+## 🌟 Key Features & SEO Optimization
 
-| Page # | Title | Hash Route | Component File |
-|---|---|---|---|
-| **Page 1** | Ghaf Woods Dubai Price and Payment Plan | `#price-payment-plan` | `src/components/PricePaymentPlanPage.jsx` |
-| **Page 2** | Full Forest View in Ghaf Woods Dubai | `#full-forest-view` | `src/components/DummyPage.jsx` (or custom page) |
-| **Page 3** | Forest and Park View in Ghaf Woods Dubai | `#forest-park-view` | `src/components/DummyPage.jsx` (or custom page) |
-| **Page 4** | Investor Deal Ghaf Woods | `#investor-deal` | `src/components/DummyPage.jsx` (or custom page) |
-| **Page 5** | Off-Plan Properties for Sale in Ghaf Woods | `#off-plan-properties` | `src/components/DummyPage.jsx` (or custom page) |
-| **Page 6** | Apartments for Sale in Ghaf Woods | `#apartments-for-sale` | `src/components/DummyPage.jsx` (or custom page) |
-| **Page 7** | Villas for Sale in Ghaf Woods | `#villas-for-sale` | `src/components/DummyPage.jsx` (or custom page) |
+- **Semantic HTML5 Markup**: Built using standard `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`, and `<figure>` tags.
+- **Strict Heading Hierarchy**: Single `<h1>` tag per page with sequential `<h2>` and `<h3>` headings.
+- **SEO Meta Tags**: Unique Page Titles, Meta Descriptions, Keywords, Canonical URLs (`https://forestliving.community/...`), Open Graph (`og:*`), and Twitter Cards.
+- **JSON-LD Schema**:
+  - `WebSite` & `Organization` Schema.
+  - `FAQPage` Schema dynamically matched per page.
+- **Pure Vanilla JS Controls** (`src/main.js`):
+  - **Mobile Menu Drawer**: Responsive toggle for header navigation.
+  - **Floor Plans Switcher**: Interactive 1-BR, 2-BR, 3-BR selector updating unit specs and imagery.
+  - **FAQ Accordions**: Accordion collapse/expand logic with `aria-expanded` support.
+  - **Lead Registration Form**: Auto-detects user country code via IP lookup (`api.country.is`) and submits lead data to n8n webhook (`https://n8n.srv1625508.hstgr.cloud/webhook/...`).

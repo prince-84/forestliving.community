@@ -122,7 +122,7 @@ export const FOOTER_PAGES = [
   {
     id: "apartments-for-sale",
     hash: "#apartments-for-sale",
-    path: "/apartments-for-sale-in-ghaf-woods/",
+    path: "/apartments-for-sale-in-ghaf-woods",
     title: "Apartments for Sale in Ghaf Woods",
     subtitle: "Modern 1, 2 & 3-bedroom forest apartments featuring expansive garden terraces",
     category: "Apartments",
@@ -144,7 +144,7 @@ export const FOOTER_PAGES = [
   {
     id: "villas-for-sale",
     hash: "#villas-for-sale",
-    path: "/villas-for-sale-in-ghaf-woods/",
+    path: "/villas-for-sale-in-ghaf-woods",
     title: "Villas for Sale in Ghaf Woods",
     subtitle: "Exclusive 4, 5 & 6-bedroom detached forest villas with private swimming pools",
     category: "Villas",
