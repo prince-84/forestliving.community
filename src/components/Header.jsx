@@ -8,9 +8,14 @@ export default function Header() {
     { label: "Gallery", hash: "#gallery" },
     { label: "Payment Plan", hash: "#payment-plan" },
     { label: "Location", hash: "#location" },
+    { label: "Saima One Residency Clifton", path: "/saima-one-residency-clifton" },
   ];
 
-  const handleNavClick = (e, targetHash) => {
+  const handleNavClick = (e, item) => {
+    if (item.path) {
+      return;
+    }
+    const targetHash = item.hash;
     if (window.location.pathname !== "/") {
       window.history.pushState({}, "", "/");
     }
@@ -45,8 +50,8 @@ export default function Header() {
           {links.map((item) => (
             <a
               key={item.label}
-              href={item.hash}
-              onClick={(e) => handleNavClick(e, item.hash)}
+              href={item.path || item.hash}
+              onClick={(e) => handleNavClick(e, item)}
               className="hover:text-forest-600 transition-colors"
             >
               {item.label}
@@ -76,10 +81,10 @@ export default function Header() {
           {links.map((item) => (
             <a
               key={item.label}
-              href={item.hash}
+              href={item.path || item.hash}
               onClick={(e) => {
                 setMobileMenuOpen(false);
-                handleNavClick(e, item.hash);
+                handleNavClick(e, item);
               }}
               className="block text-forest-900 text-base font-medium py-2 hover:text-forest-600 transition-colors"
             >

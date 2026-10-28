@@ -195,4 +195,82 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 5. Table of Contents Toggle (Saima One Residency Clifton page)
+  const tocToggleBtn = document.getElementById('toc-toggle-btn');
+  const tocContent = document.getElementById('toc-content');
+  if (tocToggleBtn && tocContent) {
+    tocToggleBtn.addEventListener('click', () => {
+      const isHidden = tocContent.classList.contains('hidden');
+      if (isHidden) {
+        tocContent.classList.remove('hidden');
+        tocToggleBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        tocContent.classList.add('hidden');
+        tocToggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // 6. Appointment Form Submission (Saima One Residency Clifton page)
+  const appointmentForm = document.getElementById('appointment-form');
+  if (appointmentForm) {
+    const appointmentSuccess = document.getElementById('appointment-success');
+    const appointmentSubmitBtn = document.getElementById('appointment-submit-btn');
+
+    appointmentForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (appointmentSubmitBtn) {
+        appointmentSubmitBtn.disabled = true;
+        appointmentSubmitBtn.textContent = 'SUBMITTING...';
+      }
+
+      const formData = new FormData(appointmentForm);
+      const name = formData.get('name') || '';
+      const phone = formData.get('phone') || '';
+      const email = formData.get('email') || '';
+      const comment = formData.get('comment') || '';
+
+      const searchParams = new URLSearchParams(window.location.search);
+      const utmCampaign = searchParams.get('utm_campaign') || searchParams.get('utm_source') || '';
+
+      const WEBHOOK_URL = 'https://n8n.srv1625508.hstgr.cloud/webhook/979a4b97-a515-4ee0-96e3-5d0ddb475e99';
+      const WEBHOOK_TOKEN = 'fsa_n8n_secret_token_2026_x99a';
+
+      const payload = {
+        name: name,
+        phone: phone,
+        email: email,
+        source: 'Website',
+        sub_source: 'Saima One Residency Clifton Appointment Form',
+        utm_campaign: utmCampaign,
+        campaign_url: window.location.href,
+        project: 'Saima One Residency Clifton',
+        developer: 'Saima Builders and Developers',
+        community: 'Clifton, Karachi',
+        property_type: 'Residential',
+        key_requirement: comment,
+        activity_description: 'New appointment request submitted from Saima One Residency Clifton page',
+        token: WEBHOOK_TOKEN
+      };
+
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': WEBHOOK_TOKEN
+          },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.warn('Webhook request emitted:', err);
+      } finally {
+        appointmentForm.classList.add('hidden');
+        if (appointmentSuccess) {
+          appointmentSuccess.classList.remove('hidden');
+        }
+      }
+    });
+  }
 });
