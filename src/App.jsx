@@ -24,6 +24,7 @@ import OffPlanPropertiesPage from "./components/OffPlanPropertiesPage";
 import ApartmentsForSalePage from "./components/ApartmentsForSalePage";
 import VillasForSalePage from "./components/VillasForSalePage";
 import ThankYouPage from "./components/ThankYouPage";
+import SaimaOneResidencyPage from "./components/SaimaOneResidencyPage";
 import DummyPage from "./components/DummyPage";
 import { FOOTER_PAGES } from "./data/footerPages";
 
@@ -49,6 +50,7 @@ export default function App() {
         "#off-plan-properties",
         "#apartments-for-sale",
         "#villas-for-sale",
+        "#saima-one-residency-clifton",
       ];
 
       if (subpageHashes.includes(hash) && path.length > 1 && path !== "/") {
@@ -73,6 +75,8 @@ export default function App() {
         setCanonicalUrl(`${domain}/apartments-for-sale-in-ghaf-woods/`);
       } else if (path.includes("villas-for-sale-in-ghaf-woods") || hash === "#villas-for-sale") {
         setCanonicalUrl(`${domain}/villas-for-sale-in-ghaf-woods/`);
+      } else if (path.includes("saima-one-residency-clifton") || hash === "#saima-one-residency-clifton") {
+        setCanonicalUrl(`${domain}/saima-one-residency-clifton`);
       } else if (path.includes("privacy-policy") || hash === "#privacy" || hash === "#privacy-policy") {
         setCanonicalUrl(`${domain}/privacy-policy/`);
       } else if (path.includes("terms-and-conditions") || hash === "#terms" || hash === "#terms-and-conditions") {
@@ -184,7 +188,12 @@ export default function App() {
     return <ThankYouPage onBack={handleBack} />;
   }
 
-  // 11. Check if hash corresponds to any other footer page
+  // 11. Page 8 (#saima-one-residency-clifton / /saima-one-residency-clifton)
+  if (hash === "#saima-one-residency-clifton" || path.includes("saima-one-residency-clifton")) {
+    return <SaimaOneResidencyPage onBack={handleBack} />;
+  }
+
+  // 12. Check if hash corresponds to any other footer page
   const activeFooterPage = FOOTER_PAGES.find((p) => p.hash === hash);
   if (activeFooterPage) {
     return <DummyPage page={activeFooterPage} onBack={handleBack} />;

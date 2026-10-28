@@ -64,6 +64,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- 9. Page 8: Saima One Residency Clifton -->
+  <url>
+    <loc>https://forestliving.community/saima-one-residency-clifton</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- 9. Privacy Policy -->
   <url>
     <loc>https://forestliving.community/privacy-policy</loc>

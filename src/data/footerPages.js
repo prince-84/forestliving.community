@@ -162,5 +162,16 @@ export const FOOTER_PAGES = [
         ]
       }
     ]
+  },
+  {
+    id: "saima-one-residency-clifton",
+    hash: "#saima-one-residency-clifton",
+    path: "/saima-one-residency-clifton",
+    title: "Saima One Residency Clifton",
+    subtitle: "Luxurious high-rise residence in the heart of Clifton, Karachi",
+    category: "Karachi Projects",
+    lastUpdated: "October 2026",
+    stats: [],
+    sections: []
   }
 ];

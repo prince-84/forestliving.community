@@ -3,7 +3,7 @@ import { FOOTER_PAGES } from "../data/footerPages";
 
 export default function Footer() {
   const col1Pages = FOOTER_PAGES.slice(0, 4);
-  const col2Pages = FOOTER_PAGES.slice(4, 7);
+  const col2Pages = FOOTER_PAGES.slice(4, 8);
 
   return (
     <footer className="relative bg-[#2B3D22] text-[#e3ded5] overflow-hidden select-none w-full">

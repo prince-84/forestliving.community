@@ -2,24 +2,33 @@ import { defineConfig } from 'vite';
 import path from 'path';
 import fs from 'fs';
 
-export default defineConfig({
-  plugins: [
-    {
-      name: 'multi-page-clean-urls',
-      configureServer(server) {
-        server.middlewares.use((req, res, next) => {
-          if (req.url && !req.url.includes('.') && req.url !== '/') {
-            const cleanPath = req.url.split('?')[0].replace(/^\/|\/$/g, '');
-            const filePath = path.resolve(__dirname, cleanPath, 'index.html');
-            if (fs.existsSync(filePath)) {
-              req.url = `/${cleanPath}/` + (req.url.includes('?') ? '?' + req.url.split('?')[1] : '');
-            }
-          }
-          next();
-        });
+function cleanUrlMpaPlugin() {
+  const rewriteMiddleware = (baseDir) => (req, res, next) => {
+    if (!req.url) return next();
+    const [urlPath, query] = req.url.split('?');
+    const cleanPath = decodeURIComponent(urlPath).replace(/\/+$/, '');
+    if (cleanPath && cleanPath !== '' && !path.extname(cleanPath)) {
+      const candidate = path.join(baseDir, cleanPath, 'index.html');
+      if (fs.existsSync(candidate)) {
+        req.url = `${cleanPath}/index.html${query ? `?${query}` : ''}`;
       }
     }
-  ],
+    next();
+  };
+
+  return {
+    name: 'clean-url-mpa',
+    configureServer(server) {
+      server.middlewares.use(rewriteMiddleware(__dirname));
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(rewriteMiddleware(path.resolve(__dirname, 'dist')));
+    }
+  };
+}
+
+export default defineConfig({
+  plugins: [cleanUrlMpaPlugin()],
   build: {
     rollupOptions: {
       input: {
@@ -31,6 +40,7 @@ export default defineConfig({
         offPlanProperties: path.resolve(__dirname, 'off-plan-properties-for-sale-in-ghaf-woods/index.html'),
         apartmentsForSale: path.resolve(__dirname, 'apartments-for-sale-in-ghaf-woods/index.html'),
         villasForSale: path.resolve(__dirname, 'villas-for-sale-in-ghaf-woods/index.html'),
+        saimaOneResidency: path.resolve(__dirname, 'saima-one-residency-clifton/index.html'),
         privacyPolicy: path.resolve(__dirname, 'privacy-policy/index.html'),
         termsAndConditions: path.resolve(__dirname, 'terms-and-conditions/index.html'),
         thankYou: path.resolve(__dirname, 'thank-you/index.html')
@@ -42,4 +52,3 @@ export default defineConfig({
     port: 5173
   }
 });
-
