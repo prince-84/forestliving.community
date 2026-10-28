@@ -1,14 +1,20 @@
 import { useState } from "react";
 import logoSvg from "../assets/logo.svg";
 
-export default function Header() {
+export default function Header({ hideSectionLinks = false }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const links = [
+  const isLyraPage =
+    hideSectionLinks ||
+    (typeof window !== "undefined" &&
+      (window.location.pathname.includes("lyra-at-ghaf-woods") ||
+        window.location.hash === "#lyra-at-ghaf-woods"));
+
+  const allLinks = [
     { label: "About Us", hash: "#about-us" },
     { label: "Gallery", hash: "#gallery" },
     { label: "Payment Plan", hash: "#payment-plan" },
     { label: "Location", hash: "#location" },
-    { label: "Saima One Residency Clifton", path: "/saima-one-residency-clifton" },
+    { label: "Lyra at Ghaf Woods", path: "/lyra-at-ghaf-woods" },
   ];
 
   const handleNavClick = (e, item) => {
@@ -47,16 +53,25 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-10 text-forest-900 text-sm font-medium">
-          {links.map((item) => (
+          {isLyraPage ? (
             <a
-              key={item.label}
-              href={item.path || item.hash}
-              onClick={(e) => handleNavClick(e, item)}
-              className="hover:text-forest-600 transition-colors"
+              href="#register"
+              className="inline-block bg-[#7d8f67] hover:bg-[#6b7d56] text-white text-sm font-semibold tracking-wide px-6 py-2.5 rounded-full transition-all duration-200 shadow-sm"
             >
-              {item.label}
+              Register Now
             </a>
-          ))}
+          ) : (
+            allLinks.map((item) => (
+              <a
+                key={item.label}
+                href={item.path || item.hash}
+                onClick={(e) => handleNavClick(e, item)}
+                className="hover:text-forest-600 transition-colors"
+              >
+                {item.label}
+              </a>
+            ))
+          )}
         </nav>
 
         {/* Mobile Menu Button */}
@@ -78,19 +93,29 @@ export default function Header() {
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3">
-          {links.map((item) => (
+          {isLyraPage ? (
             <a
-              key={item.label}
-              href={item.path || item.hash}
-              onClick={(e) => {
-                setMobileMenuOpen(false);
-                handleNavClick(e, item);
-              }}
-              className="block text-forest-900 text-base font-medium py-2 hover:text-forest-600 transition-colors"
+              href="#register"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-center bg-[#7d8f67] hover:bg-[#6b7d56] text-white text-sm font-semibold tracking-wide px-6 py-2.5 rounded-full transition-all duration-200 shadow-sm"
             >
-              {item.label}
+              Register Now
             </a>
-          ))}
+          ) : (
+            allLinks.map((item) => (
+              <a
+                key={item.label}
+                href={item.path || item.hash}
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  handleNavClick(e, item);
+                }}
+                className="block text-forest-900 text-base font-medium py-2 hover:text-forest-600 transition-colors"
+              >
+                {item.label}
+              </a>
+            ))
+          )}
         </div>
       )}
     </header>

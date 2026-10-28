@@ -41,6 +41,8 @@ h6,
 .phone-input-wrapper {
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
   border: 1px solid #efe9dd;
   border-radius: 2px;
   overflow: hidden;
@@ -56,16 +58,16 @@ h6,
 .phone-input-wrapper .PhoneInputCountry {
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 8px;
   border-right: 1px solid #efe9dd;
   background: transparent;
-  gap: 6px;
-  min-width: 72px;
+  gap: 5px;
+  flex-shrink: 0;
 }
 
 .phone-input-wrapper .country-flag-icon {
-  width: 22px;
-  height: 15px;
+  width: 20px;
+  height: 14px;
   border-radius: 2px;
   object-fit: cover;
   flex-shrink: 0;
@@ -75,12 +77,23 @@ h6,
 .phone-input-wrapper .PhoneInputCountrySelect {
   background: transparent;
   border: none;
-  font-size: 13px;
+  font-size: 12px;
   color: #334a28;
   cursor: pointer;
   outline: none;
   font-weight: 500;
-  max-width: 140px;
+  max-width: 90px;
+}
+
+@media (min-width: 640px) {
+  .phone-input-wrapper .PhoneInputCountry {
+    padding: 0 10px;
+    gap: 6px;
+  }
+  .phone-input-wrapper .PhoneInputCountrySelect {
+    font-size: 13px;
+    max-width: 120px;
+  }
 }
 
 .phone-input-wrapper .PhoneInputCountryIcon {
@@ -99,9 +112,11 @@ h6,
 
 .phone-input-wrapper .PhoneInputInput {
   flex: 1;
+  min-width: 0;
+  width: 100%;
   border: none;
   outline: none;
-  padding: 10px 14px;
+  padding: 10px 12px;
   font-size: 14px;
   font-family: 'Inter', sans-serif;
   color: #2b3d22;

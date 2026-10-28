@@ -101,20 +101,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Registration Form & Country Auto-Detection with Flags
-  const regForm = document.getElementById('registration-form');
-  const countrySelect = document.getElementById('country-code-select');
+  // 4. Registration Form & Country Auto-Detection with Flags (supports multiple forms on a page)
+  const countrySelects = document.querySelectorAll('.PhoneInputCountrySelect');
 
-  // Helper to ensure flag image exists and updates
-  const updateFlagDisplay = (countryCode) => {
-    const parent = countrySelect ? countrySelect.closest('.PhoneInputCountry') : null;
+  const updateFlagDisplayForSelect = (selectEl, countryCode) => {
+    const parent = selectEl ? selectEl.closest('.PhoneInputCountry') : null;
     if (!parent) return;
 
     let flagImg = parent.querySelector('.country-flag-icon');
     if (!flagImg) {
       flagImg = document.createElement('img');
       flagImg.className = 'country-flag-icon w-5 h-3.5 rounded-xs object-cover flex-shrink-0';
-      parent.insertBefore(flagImg, countrySelect);
+      parent.insertBefore(flagImg, selectEl);
     }
 
     const code = (countryCode || 'AE').toLowerCase();
@@ -122,31 +120,36 @@ document.addEventListener('DOMContentLoaded', () => {
     flagImg.alt = countryCode || 'AE';
   };
 
-  if (countrySelect) {
-    // Populate select with all countries (short code + dial code, no long country names)
-    countrySelect.innerHTML = COUNTRIES.map((c) =>
+  if (countrySelects.length > 0) {
+    const optionsHtml = COUNTRIES.map((c) =>
       `<option value="${c.code}" data-dial="${c.dial}" title="${c.name}">${c.code} (${c.dial})</option>`
     ).join('');
 
-    // Default to UAE initially
-    countrySelect.value = 'AE';
-    updateFlagDisplay('AE');
+    countrySelects.forEach((selectEl) => {
+      selectEl.innerHTML = optionsHtml;
+      selectEl.value = 'AE';
+      updateFlagDisplayForSelect(selectEl, 'AE');
 
-    countrySelect.addEventListener('change', () => {
-      updateFlagDisplay(countrySelect.value);
+      selectEl.addEventListener('change', () => {
+        updateFlagDisplayForSelect(selectEl, selectEl.value);
+      });
     });
 
     // Auto-detect visitor's country by IP
     detectUserCountry().then((detectedCode) => {
-      if (detectedCode && countrySelect) {
-        countrySelect.value = detectedCode;
-        updateFlagDisplay(detectedCode);
+      if (detectedCode) {
+        countrySelects.forEach((selectEl) => {
+          selectEl.value = detectedCode;
+          updateFlagDisplayForSelect(selectEl, detectedCode);
+        });
       }
     });
   }
 
-  if (regForm) {
-    const submitBtn = document.getElementById('form-submit-btn');
+  const regForms = document.querySelectorAll('#registration-form, #hero-registration-form, .js-registration-form');
+  regForms.forEach((regForm) => {
+    const submitBtn = regForm.querySelector('button[type="submit"]') || document.getElementById('form-submit-btn');
+    const localCountrySelect = regForm.querySelector('.PhoneInputCountrySelect') || document.getElementById('country-code-select');
 
     regForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -160,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = formData.get('email') || '';
       const phoneNum = (formData.get('phone') || '').toString().trim();
       
-      const selectedCountry = countrySelect ? getCountryByCode(countrySelect.value) : getCountryByCode('AE');
+      const selectedCountry = localCountrySelect ? getCountryByCode(localCountrySelect.value) : getCountryByCode('AE');
       const dialCode = selectedCountry ? selectedCountry.dial : '+971';
 
       // Format clean phone number with dial code
@@ -172,20 +175,28 @@ document.addEventListener('DOMContentLoaded', () => {
       const WEBHOOK_URL = 'https://n8n.srv1625508.hstgr.cloud/webhook/979a4b97-a515-4ee0-96e3-5d0ddb475e99';
       const WEBHOOK_TOKEN = 'fsa_n8n_secret_token_2026_x99a';
 
+      const isLyraPage =
+        window.location.pathname.includes('lyra-at-ghaf-woods') ||
+        window.location.hash === '#lyra-at-ghaf-woods';
+
       const payload = {
         name: name,
         phone: cleanPhone,
         email: email,
         source: 'Website',
-        sub_source: 'Forest Living Website Registration Form',
+        sub_source: isLyraPage
+          ? 'Lyra at Ghaf Woods Page Registration Form'
+          : 'Forest Living Website Registration Form',
         utm_campaign: utmCampaign,
         campaign_url: window.location.href,
-        project: 'Forest Living',
-        developer: 'Forest Living',
-        community: 'Forest Living Community',
+        project: isLyraPage ? 'Lyra at Ghaf Woods' : 'Forest Living',
+        developer: isLyraPage ? 'Majid Al Futtaim' : 'Forest Living',
+        community: isLyraPage ? 'Ghaf Woods, Dubailand' : 'Forest Living Community',
         property_type: 'Residential',
         key_requirement: '',
-        activity_description: 'New lead registration submitted from landing page',
+        activity_description: isLyraPage
+          ? 'New lead registration submitted from Lyra at Ghaf Woods page'
+          : 'New lead registration submitted from landing page',
         token: WEBHOOK_TOKEN
       };
 
@@ -205,9 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = '/thank-you';
       }
     });
-  }
+  });
 
-  // 5. Table of Contents Toggle (Saima One Residency Clifton page)
+  // 5. Table of Contents Toggle (Lyra at Ghaf Woods page)
   const tocToggleBtn = document.getElementById('toc-toggle-btn');
   const tocContent = document.getElementById('toc-content');
   if (tocToggleBtn && tocContent) {
@@ -219,68 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         tocContent.classList.add('hidden');
         tocToggleBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  // 6. Appointment Form Submission (Saima One Residency Clifton page)
-  const appointmentForm = document.getElementById('appointment-form');
-  if (appointmentForm) {
-    const appointmentSuccess = document.getElementById('appointment-success');
-    const appointmentSubmitBtn = document.getElementById('appointment-submit-btn');
-
-    appointmentForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (appointmentSubmitBtn) {
-        appointmentSubmitBtn.disabled = true;
-        appointmentSubmitBtn.textContent = 'SUBMITTING...';
-      }
-
-      const formData = new FormData(appointmentForm);
-      const name = formData.get('name') || '';
-      const phone = formData.get('phone') || '';
-      const email = formData.get('email') || '';
-      const comment = formData.get('comment') || '';
-
-      const searchParams = new URLSearchParams(window.location.search);
-      const utmCampaign = searchParams.get('utm_campaign') || searchParams.get('utm_source') || '';
-
-      const WEBHOOK_URL = 'https://n8n.srv1625508.hstgr.cloud/webhook/979a4b97-a515-4ee0-96e3-5d0ddb475e99';
-      const WEBHOOK_TOKEN = 'fsa_n8n_secret_token_2026_x99a';
-
-      const payload = {
-        name: name,
-        phone: phone,
-        email: email,
-        source: 'Website',
-        sub_source: 'Saima One Residency Clifton Appointment Form',
-        utm_campaign: utmCampaign,
-        campaign_url: window.location.href,
-        project: 'Saima One Residency Clifton',
-        developer: 'Saima Builders and Developers',
-        community: 'Clifton, Karachi',
-        property_type: 'Residential',
-        key_requirement: comment,
-        activity_description: 'New appointment request submitted from Saima One Residency Clifton page',
-        token: WEBHOOK_TOKEN
-      };
-
-      try {
-        await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': WEBHOOK_TOKEN
-          },
-          body: JSON.stringify(payload)
-        });
-      } catch (err) {
-        console.warn('Webhook request emitted:', err);
-      } finally {
-        appointmentForm.classList.add('hidden');
-        if (appointmentSuccess) {
-          appointmentSuccess.classList.remove('hidden');
-        }
       }
     });
   }

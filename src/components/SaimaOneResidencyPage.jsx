@@ -6,43 +6,77 @@ import { setCanonicalUrl } from "../utils/canonical";
 
 const faqs = [
   {
-    q: "1. What is Lyra at Ghaf Woods Dubai?",
+    q: (
+      <>
+        1. What is Lyra at{" "}
+        <a
+          href="/"
+          onClick={(e) => e.stopPropagation()}
+          className="text-[#6b7d56] hover:underline"
+        >
+          Ghaf Woods Dubai
+        </a>
+        ?
+      </>
+    ),
+    qText: "What is Lyra at Ghaf Woods Dubai?",
     a: "Lyra at Ghaf Woods is a residential apartment development within Ghaf Woods, a nature-inspired community by Majid Al Futtaim in Dubailand.",
   },
   {
     q: "2. Where is the Lyra at Ghaf Woods location?",
+    qText: "Where is the Lyra at Ghaf Woods location?",
     a: "The Lyra at Ghaf Woods location is in Dubailand, along Sheikh Mohammed Bin Zayed Road, with Global Village nearby for entertainment and leisure.",
   },
   {
     q: "3. What are the Lyra at Ghaf Woods prices?",
+    qText: "What are the Lyra at Ghaf Woods prices?",
     a: "The official Lyra at Ghaf Woods prices are yet to be announced. Previous Ghaf Woods phases reportedly started at around AED 1.2 million, offering a useful starting point for buyers of Lyra Ghaf Woods apartments.",
   },
   {
     q: "4. What is the Lyra at Ghaf Woods payment plan?",
+    qText: "What is the Lyra at Ghaf Woods payment plan?",
     a: "The Lyra at Ghaf Woods payment plan has not been confirmed yet. Previous phases offered flexible structures, including 60/40 and 10/50/40, but Lyra's final terms may vary.",
   },
   {
     q: "5. Is a Lyra at Ghaf Woods floor plan available?",
+    qText: "Is a Lyra at Ghaf Woods floor plan available?",
     a: "The official Lyra at Ghaf Woods floor plan has not been released publicly. Interested buyers can contact the sales team for apartment layouts, sizes, and available configurations.",
   },
   {
     q: "6. How can I get the Lyra at Ghaf Woods brochure?",
+    qText: "How can I get the Lyra at Ghaf Woods brochure?",
     a: "You can call the Ghaf Woods sales team on 800 GHAF (4423) to request the latest Lyra at Ghaf Woods brochure and learn more about the development.",
   },
   {
     q: "7. Does Lyra by Majid Al Futtaim offer only apartments?",
+    qText: "Does Lyra by Majid Al Futtaim offer only apartments?",
     a: "Ghaf Woods is planned to include apartments, duplexes, penthouses, and garden units. For the specific property types available at Lyra, it's best to check with the developer.",
   },
   {
     q: "8. How many bedrooms are available at Lyra at Ghaf Woods?",
+    qText: "How many bedrooms are available at Lyra at Ghaf Woods?",
     a: "The bedroom options for Lyra at Ghaf Woods are yet to be confirmed. Earlier Ghaf Woods phases offered one- to three-bedroom apartments, so the sales team can provide updates on the latest layouts.",
   },
   {
     q: "9. What makes Ghaf Woods a forest-living community?",
+    qText: "What makes Ghaf Woods a forest-living community?",
     a: "Ghaf Woods combines modern living with nature, featuring approximately 35,000 planned trees, walking trails, forest pools, and native plants to create a greener residential environment.",
   },
   {
-    q: "10. How can I buy apartments in Ghaf Woods Dubai?",
+    q: (
+      <>
+        10. How can I buy apartments in{" "}
+        <a
+          href="/"
+          onClick={(e) => e.stopPropagation()}
+          className="text-[#6b7d56] hover:underline"
+        >
+          Ghaf Woods Dubai
+        </a>
+        ?
+      </>
+    ),
+    qText: "How can I buy apartments in Ghaf Woods Dubai?",
     a: "Start by registering your interest with the sales team and requesting the latest prices, payment plan, and floor plans. Before booking, make sure you review the terms and verify the relevant project approvals.",
   },
 ];
@@ -54,7 +88,7 @@ export default function SaimaOneResidencyPage({ onBack }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "Lyra by Majid Al Futtaim: Price, Payment Plan & Location";
-    setCanonicalUrl("https://forestliving.community/saima-one-residency-clifton");
+    setCanonicalUrl("https://forestliving.community/lyra-at-ghaf-woods");
 
     let metaDesc = document.querySelector('meta[name="description"]');
     const prevDesc = metaDesc ? metaDesc.getAttribute("content") : "";
@@ -84,7 +118,7 @@ export default function SaimaOneResidencyPage({ onBack }) {
       "@type": "FAQPage",
       mainEntity: faqs.map((item) => ({
         "@type": "Question",
-        name: item.q.replace(/^\d+\.\s*/, ""),
+        name: item.qText,
         acceptedAnswer: {
           "@type": "Answer",
           text: item.a,
@@ -116,11 +150,11 @@ export default function SaimaOneResidencyPage({ onBack }) {
   return (
     <div className="min-h-screen bg-cream text-forest-900 flex flex-col justify-between">
       <div>
-        <Header />
+        <Header hideSectionLinks />
 
         {/* 1. HERO SECTION */}
         <section
-          className="relative text-white overflow-hidden bg-cover bg-center bg-no-repeat min-h-[340px] sm:min-h-[400px] md:min-h-[460px] flex items-center justify-center"
+          className="relative text-white overflow-hidden bg-cover bg-center bg-no-repeat min-h-[520px] md:min-h-[580px] flex items-center"
           style={{ backgroundImage: "url('/75914d231374601.68884b7d7e4c2.jpg')" }}
         >
           <div
@@ -130,13 +164,28 @@ export default function SaimaOneResidencyPage({ onBack }) {
                 "linear-gradient(90deg, rgba(43, 61, 34, 0.72) 0%, rgba(63, 90, 48, 0.65) 50%, rgba(43, 61, 34, 0.72) 100%)",
             }}
           />
-          <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-24 text-center w-full">
-            <span className="inline-block bg-[#e0c458] text-black font-semibold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-md mb-4 shadow-xs">
-              GHAF WOODS DUBAI
-            </span>
-            <p className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold uppercase tracking-wide text-white leading-tight drop-shadow-sm">
-              LYRA AT GHAF WOODS
-            </p>
+          <div className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-14 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center w-full">
+            <div className="text-center lg:text-left">
+              <a
+                href="/"
+                className="inline-block bg-[#e0c458] hover:bg-[#d4b64a] text-black font-semibold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-md mb-3 sm:mb-4 shadow-xs transition-colors"
+              >
+                GHAF WOODS DUBAI
+              </a>
+              <p className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold uppercase tracking-wide text-white leading-tight drop-shadow-sm mb-5 sm:mb-8">
+                LYRA AT GHAF WOODS
+              </p>
+              <a
+                href="#register"
+                className="inline-block border border-white/60 hover:border-white bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold tracking-wide px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-200 backdrop-blur-sm"
+              >
+                Register Now
+              </a>
+            </div>
+
+            <div className="relative max-w-md lg:max-w-lg w-full mx-auto lg:ml-auto lg:mr-0">
+              <RegisterForm isHeroCard />
+            </div>
           </div>
         </section>
 
@@ -224,7 +273,11 @@ export default function SaimaOneResidencyPage({ onBack }) {
                       Lyra at Ghaf Woods
                     </h1>
                     <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-5">
-                      Discover Lyra at Ghaf Woods, Dubai, with forest-inspired apartments, wellness amenities, green trails, and nature-led living in Dubailand.
+                      Discover Lyra at{" "}
+                      <a href="/" className="text-[#6b7d56] hover:underline font-semibold">
+                        Ghaf Woods, Dubai
+                      </a>
+                      , with forest-inspired apartments, wellness amenities, green trails, and nature-led living in Dubailand.
                     </p>
                     <div className="my-5 overflow-hidden rounded-2xl shadow-sm">
                       <img
@@ -234,7 +287,11 @@ export default function SaimaOneResidencyPage({ onBack }) {
                       />
                     </div>
                     <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                      Lyra at Ghaf Woods is a residential phase and apartment launch inside Dubai's forest-living community. The idea is simple: homes arranged around trees, trails and shade instead of a concrete skyline. Those searching for Lyra at Ghaf Woods Dubai, are often interested in what daily life in a forest-inspired residential community looks like, making this a key aspect to explore first. Lyra by Majid Al Futtaim belongs to a 738,000 sq m community near Global Village, planned in eight phases through 2031.
+                      Lyra at Ghaf Woods is a residential phase and apartment launch inside Dubai's forest-living community. The idea is simple: homes arranged around trees, trails and shade instead of a concrete skyline. Those searching for Lyra at{" "}
+                      <a href="/" className="text-[#6b7d56] hover:underline font-semibold">
+                        Ghaf Woods Dubai
+                      </a>
+                      , are often interested in what daily life in a forest-inspired residential community looks like, making this a key aspect to explore first. Lyra by Majid Al Futtaim belongs to a 738,000 sq m community near Global Village, planned in eight phases through 2031.
                     </p>
                   </div>
 
@@ -414,7 +471,11 @@ export default function SaimaOneResidencyPage({ onBack }) {
                       Investment Potential
                     </h2>
                     <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                      For investors, Lyra at Ghaf Woods presents a compelling off-plan opportunity within a uniquely positioned community. The strong reputation of Lyra by Majid Al Futtaim and the proven capital appreciation of Ghaf Woods phases suggest solid long-term value. Those looking to buy apartments in Ghaf Woods Dubai are investing in a lifestyle concept with limited future supply, which could support resale and rental yields. However, potential investors must account for the multi-year construction timeline and confirm all payment plan details before committing.
+                      For investors, Lyra at Ghaf Woods presents a compelling off-plan opportunity within a uniquely positioned community. The strong reputation of Lyra by Majid Al Futtaim and the proven capital appreciation of Ghaf Woods phases suggest solid long-term value. Those looking to buy apartments in{" "}
+                      <a href="/" className="text-[#6b7d56] hover:underline font-semibold">
+                        Ghaf Woods Dubai
+                      </a>{" "}
+                      are investing in a lifestyle concept with limited future supply, which could support resale and rental yields. However, potential investors must account for the multi-year construction timeline and confirm all payment plan details before committing.
                     </p>
                   </div>
 

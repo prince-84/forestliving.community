@@ -164,12 +164,12 @@ export const FOOTER_PAGES = [
     ]
   },
   {
-    id: "saima-one-residency-clifton",
-    hash: "#saima-one-residency-clifton",
-    path: "/saima-one-residency-clifton",
-    title: "Saima One Residency Clifton",
-    subtitle: "Luxurious high-rise residence in the heart of Clifton, Karachi",
-    category: "Karachi Projects",
+    id: "lyra-at-ghaf-woods",
+    hash: "#lyra-at-ghaf-woods",
+    path: "/lyra-at-ghaf-woods",
+    title: "Lyra at Ghaf Woods",
+    subtitle: "Discover Lyra at Ghaf Woods, Dubai, with forest-inspired apartments by Majid Al Futtaim",
+    category: "Ghaf Woods Listings",
     lastUpdated: "October 2026",
     stats: [],
     sections: []

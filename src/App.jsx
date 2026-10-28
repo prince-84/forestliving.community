@@ -50,7 +50,7 @@ export default function App() {
         "#off-plan-properties",
         "#apartments-for-sale",
         "#villas-for-sale",
-        "#saima-one-residency-clifton",
+        "#lyra-at-ghaf-woods",
       ];
 
       if (subpageHashes.includes(hash) && path.length > 1 && path !== "/") {
@@ -75,8 +75,8 @@ export default function App() {
         setCanonicalUrl(`${domain}/apartments-for-sale-in-ghaf-woods/`);
       } else if (path.includes("villas-for-sale-in-ghaf-woods") || hash === "#villas-for-sale") {
         setCanonicalUrl(`${domain}/villas-for-sale-in-ghaf-woods/`);
-      } else if (path.includes("saima-one-residency-clifton") || hash === "#saima-one-residency-clifton") {
-        setCanonicalUrl(`${domain}/saima-one-residency-clifton`);
+      } else if (path.includes("lyra-at-ghaf-woods") || hash === "#lyra-at-ghaf-woods") {
+        setCanonicalUrl(`${domain}/lyra-at-ghaf-woods`);
       } else if (path.includes("privacy-policy") || hash === "#privacy" || hash === "#privacy-policy") {
         setCanonicalUrl(`${domain}/privacy-policy/`);
       } else if (path.includes("terms-and-conditions") || hash === "#terms" || hash === "#terms-and-conditions") {
@@ -188,8 +188,8 @@ export default function App() {
     return <ThankYouPage onBack={handleBack} />;
   }
 
-  // 11. Page 8 (#saima-one-residency-clifton / /saima-one-residency-clifton)
-  if (hash === "#saima-one-residency-clifton" || path.includes("saima-one-residency-clifton")) {
+  // 11. Page 8 (#lyra-at-ghaf-woods / /lyra-at-ghaf-woods)
+  if (hash === "#lyra-at-ghaf-woods" || path.includes("lyra-at-ghaf-woods")) {
     return <SaimaOneResidencyPage onBack={handleBack} />;
   }
 

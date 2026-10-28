@@ -2,11 +2,12 @@ import maravelleImg from "../assets/maravelle.jpg";
 
 const properties = [
   {
-    name: "Distrikt at Ghaf Woods",
+    name: "Lyra at Ghaf Woods",
     location: "Dubailand, Dubai",
-    desc: "New Majid AL Futtaim has newly launched a new district at Ghaf Woods, situated in the heart of Dubai's nature. It offers a serene living experience with 2-3 living bedroom apartments",
-    specs: "Bedroom 1-3   |   Apartments",
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+    desc: "Lyra at Ghaf Woods offers modern apartments in a nature-inspired community in Dubai. Explore comfortable living spaces, green surroundings, lifestyle amenities, and property investment opportunities in Dubailand.",
+    specs: "Bedroom 1-3   |   Updated soon",
+    img: "/20240920044502587574306o.jpg",
+    link: "/lyra-at-ghaf-woods",
   },
   {
     name: "Capria at Ghaf Woods",
@@ -36,11 +37,24 @@ const properties = [
     specs: "Bedroom 2 - 4   |   Apartments",
     img: maravelleImg,
   },
+  {
+    name: "Distrikt at Ghaf Woods",
+    location: "Dubailand, Dubai",
+    desc: "New Majid AL Futtaim has newly launched a new district at Ghaf Woods, situated in the heart of Dubai's nature. It offers a serene living experience with 2-3 living bedroom apartments",
+    specs: "Bedroom 1-3   |   Apartments",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+  },
 ];
 
 function PropertyCard({ p }) {
+  const CardWrapper = p.link ? "a" : "div";
+  const wrapperProps = p.link ? { href: p.link } : {};
+
   return (
-    <div className="bg-white rounded-3xl p-5 md:p-6 border border-gray-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full">
+    <CardWrapper
+      {...wrapperProps}
+      className="bg-white rounded-3xl p-5 md:p-6 border border-gray-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full cursor-pointer"
+    >
       <div>
         <div className="rounded-2xl overflow-hidden mb-4 h-[200px] md:h-[220px]">
           <img
@@ -73,14 +87,20 @@ function PropertyCard({ p }) {
           </p>
         </div>
 
-        <a
-          href="#register"
-          className="block w-full py-2.5 text-center rounded-full border border-black text-black font-semibold text-xs md:text-sm hover:bg-black hover:text-white transition-colors duration-200"
-        >
-          Price &amp; Payment Plan
-        </a>
+        {p.link ? (
+          <span className="block w-full py-2.5 text-center rounded-full border border-black text-black font-semibold text-xs md:text-sm hover:bg-black hover:text-white transition-colors duration-200">
+            Price &amp; Payment Plan
+          </span>
+        ) : (
+          <a
+            href="#register"
+            className="block w-full py-2.5 text-center rounded-full border border-black text-black font-semibold text-xs md:text-sm hover:bg-black hover:text-white transition-colors duration-200"
+          >
+            Price &amp; Payment Plan
+          </a>
+        )}
       </div>
-    </div>
+    </CardWrapper>
   );
 }
 
@@ -109,7 +129,7 @@ export default function Properties() {
           </div>
         </div>
 
-        {/* All 5 Cards Responsive Grid */}
+        {/* All 6 Cards Responsive Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {properties.map((p) => (
             <PropertyCard key={p.name} p={p} />
@@ -119,5 +139,3 @@ export default function Properties() {
     </section>
   );
 }
-
-

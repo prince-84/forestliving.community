@@ -40,7 +40,7 @@ export default defineConfig({
         offPlanProperties: path.resolve(__dirname, 'off-plan-properties-for-sale-in-ghaf-woods/index.html'),
         apartmentsForSale: path.resolve(__dirname, 'apartments-for-sale-in-ghaf-woods/index.html'),
         villasForSale: path.resolve(__dirname, 'villas-for-sale-in-ghaf-woods/index.html'),
-        saimaOneResidency: path.resolve(__dirname, 'saima-one-residency-clifton/index.html'),
+        lyraAtGhafWoods: path.resolve(__dirname, 'lyra-at-ghaf-woods/index.html'),
         privacyPolicy: path.resolve(__dirname, 'privacy-policy/index.html'),
         termsAndConditions: path.resolve(__dirname, 'terms-and-conditions/index.html'),
         thankYou: path.resolve(__dirname, 'thank-you/index.html')

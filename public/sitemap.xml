@@ -64,15 +64,15 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 9. Page 8: Saima One Residency Clifton -->
+  <!-- 9. Page 8: Lyra at Ghaf Woods -->
   <url>
-    <loc>https://forestliving.community/saima-one-residency-clifton</loc>
+    <loc>https://forestliving.community/lyra-at-ghaf-woods</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- 9. Privacy Policy -->
+  <!-- 10. Privacy Policy -->
   <url>
     <loc>https://forestliving.community/privacy-policy</loc>
     <lastmod>2026-10-08</lastmod>
@@ -80,7 +80,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 10. Terms & Conditions -->
+  <!-- 11. Terms & Conditions -->
   <url>
     <loc>https://forestliving.community/terms-and-conditions</loc>
     <lastmod>2026-10-08</lastmod>
