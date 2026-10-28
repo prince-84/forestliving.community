@@ -1,4 +1,5 @@
 import './index.css';
+import { COUNTRIES, getCountryByCode, detectUserCountry } from './data/countries';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Mobile Menu Toggle
@@ -100,44 +101,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Registration Form & Country Auto-Detection
+  // 4. Registration Form & Country Auto-Detection with Flags
   const regForm = document.getElementById('registration-form');
   const countrySelect = document.getElementById('country-code-select');
 
+  // Helper to ensure flag image exists and updates
+  const updateFlagDisplay = (countryCode) => {
+    const parent = countrySelect ? countrySelect.closest('.PhoneInputCountry') : null;
+    if (!parent) return;
+
+    let flagImg = parent.querySelector('.country-flag-icon');
+    if (!flagImg) {
+      flagImg = document.createElement('img');
+      flagImg.className = 'country-flag-icon w-5 h-3.5 rounded-xs object-cover flex-shrink-0';
+      parent.insertBefore(flagImg, countrySelect);
+    }
+
+    const code = (countryCode || 'AE').toLowerCase();
+    flagImg.src = `https://flagcdn.com/w40/${code}.png`;
+    flagImg.alt = countryCode || 'AE';
+  };
+
   if (countrySelect) {
-    const detectCountry = async () => {
-      try {
-        const res = await fetch('https://api.country.is');
-        if (res.ok) {
-          const data = await res.json();
-          if (data && data.country) {
-            countrySelect.value = data.country.toUpperCase();
-            return;
-          }
-        }
-      } catch (err) {
-        console.warn('api.country.is failed, trying ipwho.is fallback:', err);
-      }
+    // Populate select with all countries (short code + dial code, no long country names)
+    countrySelect.innerHTML = COUNTRIES.map((c) =>
+      `<option value="${c.code}" data-dial="${c.dial}" title="${c.name}">${c.code} (${c.dial})</option>`
+    ).join('');
 
-      try {
-        const res = await fetch('https://ipwho.is/');
-        if (res.ok) {
-          const data = await res.json();
-          if (data && data.country_code) {
-            countrySelect.value = data.country_code.toUpperCase();
-          }
-        }
-      } catch (err) {
-        console.warn('Fallback to default country code AE:', err);
-      }
-    };
+    // Default to UAE initially
+    countrySelect.value = 'AE';
+    updateFlagDisplay('AE');
 
-    detectCountry();
+    countrySelect.addEventListener('change', () => {
+      updateFlagDisplay(countrySelect.value);
+    });
+
+    // Auto-detect visitor's country by IP
+    detectUserCountry().then((detectedCode) => {
+      if (detectedCode && countrySelect) {
+        countrySelect.value = detectedCode;
+        updateFlagDisplay(detectedCode);
+      }
+    });
   }
 
   if (regForm) {
-    const formContainer = document.getElementById('form-container');
-    const successContainer = document.getElementById('success-container');
     const submitBtn = document.getElementById('form-submit-btn');
 
     regForm.addEventListener('submit', async (e) => {
@@ -150,8 +158,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const formData = new FormData(regForm);
       const name = formData.get('name') || '';
       const email = formData.get('email') || '';
-      const phoneNum = formData.get('phone') || '';
-      const countryCode = countrySelect ? countrySelect.value : 'AE';
+      const phoneNum = (formData.get('phone') || '').toString().trim();
+      
+      const selectedCountry = countrySelect ? getCountryByCode(countrySelect.value) : getCountryByCode('AE');
+      const dialCode = selectedCountry ? selectedCountry.dial : '+971';
+
+      // Format clean phone number with dial code
+      const cleanPhone = phoneNum.startsWith('+') ? phoneNum : `${dialCode} ${phoneNum}`;
 
       const searchParams = new URLSearchParams(window.location.search);
       const utmCampaign = searchParams.get('utm_campaign') || searchParams.get('utm_source') || '';
@@ -161,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const payload = {
         name: name,
-        phone: `${countryCode ? `+${countryCode} ` : ''}${phoneNum}`,
+        phone: cleanPhone,
         email: email,
         source: 'Website',
         sub_source: 'Forest Living Website Registration Form',
@@ -188,10 +201,8 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (err) {
         console.warn('Webhook request emitted:', err);
       } finally {
-        if (formContainer && successContainer) {
-          formContainer.classList.add('hidden');
-          successContainer.classList.remove('hidden');
-        }
+        // Redirect to dedicated Thank You page
+        window.location.href = '/thank-you';
       }
     });
   }

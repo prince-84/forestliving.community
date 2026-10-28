@@ -23,6 +23,7 @@ import InvestorDealPage from "./components/InvestorDealPage";
 import OffPlanPropertiesPage from "./components/OffPlanPropertiesPage";
 import ApartmentsForSalePage from "./components/ApartmentsForSalePage";
 import VillasForSalePage from "./components/VillasForSalePage";
+import ThankYouPage from "./components/ThankYouPage";
 import DummyPage from "./components/DummyPage";
 import { FOOTER_PAGES } from "./data/footerPages";
 
@@ -178,7 +179,12 @@ export default function App() {
     return <VillasForSalePage onBack={handleBack} />;
   }
 
-  // 10. Check if hash corresponds to any other footer page
+  // 10. Thank You Page (/thank-you)
+  if (hash === "#thank-you" || path.includes("thank-you")) {
+    return <ThankYouPage onBack={handleBack} />;
+  }
+
+  // 11. Check if hash corresponds to any other footer page
   const activeFooterPage = FOOTER_PAGES.find((p) => p.hash === hash);
   if (activeFooterPage) {
     return <DummyPage page={activeFooterPage} onBack={handleBack} />;

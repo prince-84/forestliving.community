@@ -26,7 +26,11 @@ Options -Indexes
   RewriteCond %{REQUEST_URI} ^(.+[^/])/+$
   RewriteRule ^ https://forestliving.community%1 [R=301,L]
 
-  # 4. Handle Front Controller SPA / static Routing (fallback to index.html)
+  # 4. Serve subpage index.html if the directory exists (without trailing slash)
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^([^.]+)$ $1/index.html [L]
+
+  # 5. Handle Front Controller SPA / static Routing (fallback to index.html)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]

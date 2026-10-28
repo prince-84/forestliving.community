@@ -90,11 +90,10 @@ export default function RegisterForm() {
         console.warn("Webhook returned status:", response.status);
       }
 
-      setSubmitted(true);
+      window.location.href = "/thank-you";
     } catch (err) {
       console.error("Error submitting form to webhook:", err);
-      // Still show success or error message
-      setSubmitted(true);
+      window.location.href = "/thank-you";
     } finally {
       setLoading(false);
     }

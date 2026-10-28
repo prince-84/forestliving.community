@@ -21,44 +21,44 @@ const averagePrices = [
 
 const faqs = [
   {
-    q: "1. What is the average price of property in Ghaf Woods Dubai?",
-    a: "The average prices in the provided data range from AED 2,153,236 to AED 6,368,625, depending on the community."
+    q: "1. What is Ghaf Woods in Dubai?",
+    a: "Ghaf Woods is a forest-living residential community in Dubai by Majid Al Futtaim, offering modern homes surrounded by green spaces."
   },
   {
-    q: "2. What is the Ghaf Woods Dubai price and payment plan?",
-    a: "The price and payment plan depend on the specific community, property, and unit. Buyers should request the latest details for their preferred property."
+    q: "2. Where is Ghaf Woods located in Dubai?",
+    a: "Ghaf Woods is located in Dubai and is designed as a nature-focused residential community."
   },
   {
-    q: "3. What is the average price of Maravelle Residences?",
-    a: "The provided data lists the average price of Maravelle Residences 1 and Maravelle Residences 2 at AED 6,368,625."
+    q: "3. Who is the developer of Ghaf Woods Dubai?",
+    a: "Ghaf Woods is developed by Majid Al Futtaim."
   },
   {
-    q: "4. What is the average price of Capria properties in Ghaf Woods?",
-    a: "The provided data includes several Capria communities, with average prices ranging from AED 2,624,600 to AED 3,353,105."
+    q: "4. What types of properties are available in Ghaf Woods?",
+    a: "Ghaf Woods offers different residential options, including apartments, villas, and other modern residences."
   },
   {
-    q: "5. What is the average price of Distrikt properties?",
-    a: "The provided data lists Distrikt 1, Distrikt 2, Distrikt 3, and Distrikt 4 with average prices ranging from AED 2,153,236 to AED 2,631,721."
+    q: "5. What is the starting price of properties in Ghaf Woods Dubai?",
+    a: "Prices vary by community and property. The provided average-price data includes properties starting from around AED 2.15 million."
   },
   {
-    q: "6. Are there apartments for sale in Ghaf Woods?",
-    a: "Yes, buyers can explore apartment options across different Ghaf Woods communities, subject to current availability."
+    q: "6. Is Ghaf Woods a good place to invest in Dubai?",
+    a: "Ghaf Woods can be considered by buyers and investors interested in modern residential property and forest-style community living in Dubai."
   },
   {
-    q: "7. Are villas available for sale in Ghaf Woods?",
-    a: "Yes, villa options can be explored based on current availability, property type, size, and budget."
+    q: "7. What amenities are available at Ghaf Woods?",
+    a: "The community is planned around green spaces, modern residential facilities, outdoor areas, and lifestyle-focused amenities."
   },
   {
-    q: "8. Can I buy an off-plan property in Ghaf Woods?",
-    a: "Yes, buyers interested in off-plan properties can explore available developments and review their current prices and payment terms."
+    q: "8. What makes Ghaf Woods a forest-living community?",
+    a: "Ghaf Woods combines residential development with extensive greenery, natural surroundings, and outdoor spaces to create a forest-living environment."
   },
   {
-    q: "9. Can the Ghaf Woods property price change?",
-    a: "Yes, property prices can change based on availability, market conditions, unit specifications, and other factors."
+    q: "9. How can I buy a property in Ghaf Woods Dubai?",
+    a: "You can explore available properties, compare prices and payment plans, and contact a property consultant for current units and purchase details."
   },
   {
-    q: "10. How can I get the latest Ghaf Woods payment plan?",
-    a: "You can contact the property team with your preferred community or property type to request the latest available payment and purchase details."
+    q: "10. What are the payment plans for Ghaf Woods properties?",
+    a: "Payment plans can vary by development and property. Buyers should request the latest payment plan for their preferred unit."
   }
 ];
 
