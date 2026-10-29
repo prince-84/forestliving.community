@@ -173,7 +173,7 @@ export default function SaimaOneResidencyPage({ onBack }) {
                 GHAF WOODS DUBAI
               </a>
               <p className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold uppercase tracking-wide text-white leading-tight drop-shadow-sm mb-5 sm:mb-8">
-                LYRA AT GHAF WOODS
+                LYRA RESIDENCES AT GHAF WOODS
               </p>
               <a
                 href="#register"
@@ -207,7 +207,7 @@ export default function SaimaOneResidencyPage({ onBack }) {
                 Home
               </a>
               <span className="mx-1.5 text-forest-700">/</span>
-              <span className="text-forest-900 font-medium">Lyra at Ghaf Woods</span>
+              <span className="text-forest-900 font-medium">Lyra Residences at Ghaf Woods</span>
             </nav>
 
             {/* Table of Contents Box */}
@@ -244,7 +244,7 @@ export default function SaimaOneResidencyPage({ onBack }) {
               </div>
               {tocOpen && (
                 <div className="mt-3 pt-2.5 border-t border-sand text-sm text-forest-800 space-y-1.5">
-                  <a href="#lyra-at-ghaf-woods" className="block hover:text-[#6B7D56] transition-colors">1. Lyra at Ghaf Woods</a>
+                  <a href="#lyra-at-ghaf-woods" className="block hover:text-[#6B7D56] transition-colors">1. Lyra Residences at Ghaf Woods</a>
                   <a href="#what-is-lyra" className="block hover:text-[#6B7D56] transition-colors">2. What Is Lyra at Ghaf Woods?</a>
                   <a href="#about-the-developer" className="block hover:text-[#6B7D56] transition-colors">3. About the Developer</a>
                   <a href="#living-inside-a-forest" className="block hover:text-[#6B7D56] transition-colors">4. Living Inside a Forest</a>
@@ -270,7 +270,7 @@ export default function SaimaOneResidencyPage({ onBack }) {
                   {/* H1 Section */}
                   <div id="lyra-at-ghaf-woods">
                     <h1 className="font-display text-2xl sm:text-3xl md:text-4xl text-[#6b7d56] mb-3 uppercase tracking-wider font-bold">
-                      Lyra at Ghaf Woods
+                      Lyra Residences at Ghaf Woods
                     </h1>
                     <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-5">
                       Discover Lyra at{" "}
@@ -430,9 +430,45 @@ export default function SaimaOneResidencyPage({ onBack }) {
                     <h2 className="font-display text-xl md:text-2xl text-[#6b7d56] mb-3 uppercase tracking-wider font-semibold">
                       Lyra at Ghaf Woods Prices
                     </h2>
-                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                      Ghaf Woods units were priced from AED 1.2 million at launch. Recent releases have generally risen about 10 per cent between phases. Independent Lyra at Ghaf Woods prices are not published, so ask for a unit-wise price list. Budget for registration fees and service charges too.
+                    <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
+                      Lyra at Ghaf Woods offers 1-bedroom units starting from AED 1.19 million, 1-bedroom plus units from AED 1.22 million, and 1-bedroom garden units from AED 1.47 million. Two-bedroom units start from AED 1.94 million, while 2-bedroom garden units start from AED 2.38 million. The project offers a 50/50 payment plan.
                     </p>
+                    <div className="overflow-x-auto rounded-2xl border border-sand shadow-md bg-white max-w-3xl mx-auto">
+                      <table className="w-full text-center border-collapse font-sans text-sm md:text-base">
+                        <thead>
+                          <tr className="bg-[#6b7d56] text-white">
+                            <th className="py-4 px-5 sm:px-6 font-display font-semibold uppercase tracking-wider text-xs sm:text-sm border-b border-sand w-1/2">
+                              Bedroom
+                            </th>
+                            <th className="py-4 px-5 sm:px-6 font-display font-semibold uppercase tracking-wider text-xs sm:text-sm border-b border-sand w-1/2">
+                              Starting From
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-sand/70 text-forest-900">
+                          <tr className="hover:bg-cream/60 transition-colors">
+                            <td className="py-3.5 px-5 sm:px-6 font-medium">1 Bedroom</td>
+                            <td className="py-3.5 px-5 sm:px-6 font-semibold text-[#6b7d56]">AED 1.19M</td>
+                          </tr>
+                          <tr className="bg-cream/30 hover:bg-cream/60 transition-colors">
+                            <td className="py-3.5 px-5 sm:px-6 font-medium">1 Bedroom +</td>
+                            <td className="py-3.5 px-5 sm:px-6 font-semibold text-[#6b7d56]">AED 1.22M</td>
+                          </tr>
+                          <tr className="hover:bg-cream/60 transition-colors">
+                            <td className="py-3.5 px-5 sm:px-6 font-medium">1 Bedroom Garden</td>
+                            <td className="py-3.5 px-5 sm:px-6 font-semibold text-[#6b7d56]">AED 1.47M</td>
+                          </tr>
+                          <tr className="bg-cream/30 hover:bg-cream/60 transition-colors">
+                            <td className="py-3.5 px-5 sm:px-6 font-medium">2 Bedroom</td>
+                            <td className="py-3.5 px-5 sm:px-6 font-semibold text-[#6b7d56]">AED 1.94M</td>
+                          </tr>
+                          <tr className="hover:bg-cream/60 transition-colors">
+                            <td className="py-3.5 px-5 sm:px-6 font-medium">2 Bedroom Garden</td>
+                            <td className="py-3.5 px-5 sm:px-6 font-semibold text-[#6b7d56]">AED 2.38M</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
 
                   {/* H2: Lyra at Ghaf Woods Payment Plan */}
@@ -440,9 +476,19 @@ export default function SaimaOneResidencyPage({ onBack }) {
                     <h2 className="font-display text-xl md:text-2xl text-[#6b7d56] mb-3 uppercase tracking-wider font-semibold">
                       Lyra at Ghaf Woods Payment Plan
                     </h2>
-                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                      The plan for this phase is not confirmed. Earlier releases used a 60/40 plan, with 60% during construction and 40% at handover, and some recent ones used 10% on booking, 50% during construction and 40% on completion. The Lyra at Ghaf Woods payment plan’s official schedule is yet to be released. Eligible first-time buyers can also check Majid Al Futtaim's programme with the Dubai Land Department, which offers up to 5% savings.
+                    <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
+                      Lyra at Ghaf Woods offers a flexible 50/50 payment plan, allowing buyers to pay 50% during construction and the remaining 50% upon handover. This payment structure helps buyers manage their property investment while planning for their future home in Dubai’s forest-inspired residential community.
                     </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 max-w-3xl mx-auto">
+                      <div className="bg-white rounded-2xl border border-sand border-t-4 border-t-[#6b7d56] shadow-md hover:shadow-lg transition-all duration-200 p-7 sm:p-8 text-center flex flex-col items-center justify-center">
+                        <span className="font-display text-3xl sm:text-4xl font-bold text-[#6b7d56] mb-2">50%</span>
+                        <span className="font-sans text-sm sm:text-base text-forest-800 font-medium tracking-wide">During Construction</span>
+                      </div>
+                      <div className="bg-white rounded-2xl border border-sand border-t-4 border-t-[#6b7d56] shadow-md hover:shadow-lg transition-all duration-200 p-7 sm:p-8 text-center flex flex-col items-center justify-center">
+                        <span className="font-display text-3xl sm:text-4xl font-bold text-[#6b7d56] mb-2">50%</span>
+                        <span className="font-sans text-sm sm:text-base text-forest-800 font-medium tracking-wide">Upon Handover</span>
+                      </div>
+                    </div>
                   </div>
 
                   {/* H2: Lyra at Ghaf Woods Brochure */}

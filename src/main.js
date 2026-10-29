@@ -1,7 +1,7 @@
 import './index.css';
 import { COUNTRIES, getCountryByCode, detectUserCountry } from './data/countries';
 
-document.addEventListener('DOMContentLoaded', () => {
+const initApp = () => {
   // 1. Mobile Menu Toggle
   const menuBtn = document.getElementById('mobile-menu-btn');
   const menuDrawer = document.getElementById('mobile-menu');
@@ -27,24 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. FAQ Accordion Toggle
-  const faqButtons = document.querySelectorAll('.faq-toggle-btn');
-  faqButtons.forEach((btn, index) => {
+  // 2. FAQ Accordion Toggle (supports both .faq-toggle-btn and .faq-toggle across all pages)
+  const faqButtons = document.querySelectorAll('.faq-toggle-btn, .faq-toggle');
+  faqButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const parent = btn.closest('.faq-item');
+      const parent = btn.closest('.faq-item') || btn.parentElement;
       if (!parent) return;
       const content = parent.querySelector('.faq-content');
       const icon = btn.querySelector('.faq-icon');
       const isExpanded = btn.getAttribute('aria-expanded') === 'true';
 
-      // Optionally close other items in the same section
+      // Close other items in the same section
       const section = btn.closest('section');
       if (section) {
-        const siblingButtons = section.querySelectorAll('.faq-toggle-btn');
+        const siblingButtons = section.querySelectorAll('.faq-toggle-btn, .faq-toggle');
         siblingButtons.forEach(otherBtn => {
           if (otherBtn !== btn) {
             otherBtn.setAttribute('aria-expanded', 'false');
-            const otherParent = otherBtn.closest('.faq-item');
+            const otherParent = otherBtn.closest('.faq-item') || otherBtn.parentElement;
             if (otherParent) {
               const otherContent = otherParent.querySelector('.faq-content');
               const otherIcon = otherBtn.querySelector('.faq-icon');
@@ -233,4 +233,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
